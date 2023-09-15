@@ -1,17 +1,17 @@
 import { ChakraBaseProvider, extendBaseTheme } from '@chakra-ui/react'
 import chakraTheme from '@chakra-ui/theme'
-import { Input } from '@chakra-ui/react'
-import { Stack } from '@chakra-ui/react'
+import { Input, Stack , Flex, Box } from '@chakra-ui/react'
 import LoginForm from '../components/LoginForm/LoginForm'
-import './LoginPage.scss'
 
 function LoginPage(){
 
 
     return(
-
-            <LoginForm/>
-
+        <Flex bg= 'black' height='100vh' justifyContent="center" alignItems="center" >
+            <Box>
+                <LoginForm/>    
+            </Box>
+        </Flex>
 
 
     )
