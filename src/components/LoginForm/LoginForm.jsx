@@ -1,5 +1,7 @@
 // src/components/LoginForm.js
 import { Box, Heading, Input, Button, FormControl, FormLabel, Stack } from "@chakra-ui/react";
+import {Link} from 'react-router-dom'
+
 
 const LoginForm = () => {
   return (
@@ -15,6 +17,8 @@ const LoginForm = () => {
           <FormControl id="password">
             <Input type="password" placeholder="password" />
           </FormControl>
+          <Link to='/'>Forgot Password?</Link>
+
           <Button type="submit" bg="rgb(180, 157, 253)" fontFamily='Lush Handwritten Compressed' _hover={{ bg: 'white' }}>
             SIGN-IN
           </Button>
