@@ -6,7 +6,7 @@ import './QueuePage.scss'
 
 const QueuePage = () => {
     return (
-        <Flex p='24px 21px 0 21px'>
+        <Flex height='100vh' background= 'var(--neutral-900, #282121)' color='#FFF' p='24px 21px 0 21px'>
             <VStack spacing={0}>
                 <Text fontFamily='Lush Handwritten' fontSize='30px' pb='16px'>
                 Purchase Completed
@@ -24,11 +24,11 @@ const QueuePage = () => {
                     </VStack>
                 </Box>
                 <Text fontFamily='Lush Handwritten' fontSize='40px' pt='43px'>
-                    Your Place In Line
+                    Est. Wait Time
                 </Text>
                 <Box className='queue-number'>
                     {/* Replace 3 with function...? */}
-                    <Text fontFamily='Lush Handwritten' fontSize='40px'>3</Text>
+                    <Text fontFamily='Lush Handwritten' color= '#000' fontSize='40px'>3 Minutes</Text>
                 </Box>
             </VStack>
         </Flex>

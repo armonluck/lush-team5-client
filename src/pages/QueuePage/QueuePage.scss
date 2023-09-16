@@ -1,7 +1,7 @@
 @import '../../styles/globals.scss';
 
 .ready-message {
-    color: #000;
+    color: #FFF;
     font-family: Helvetica;
     font-size: 15px;
     font-style: normal;
@@ -11,18 +11,18 @@
     padding-right: 5px;
 
     &__name {
+        color: #8D79D3;
         font-family: 'Lush Handwritten';
     }
 }
 
 .queue-number {
-    margin-top: 7px;
-    display: flex;
-    height: 72px;
-    width: 72px;
-    padding: 8px 25px 7px 25px;
+    margin-top: 16px;
+    display: inline-flex;
+    padding: 7px 25px;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    gap: 10px;
+    border-radius: 999px;
     background: #C3C3C3;
 }
