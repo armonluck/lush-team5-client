@@ -7,7 +7,7 @@ import OnSale from '../../components/OnSale/OnSale';
 
 const ProfilePage = () => {
     return (
-        <Box pt='40px'>
+        <Box height='100vh' background= 'var(--neutral-900, #282121)' pt='40px'>
             <Flex justifyContent='center' gap='24px' px='20px'>
                 <BestSellers />
                 <BuyAgain />
