@@ -1,0 +1,28 @@
+@import '../../styles/globals.scss';
+
+.ready-message {
+    color: #000;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    padding-right: 5px;
+
+    &__name {
+        font-family: 'Lush Handwritten';
+    }
+}
+
+.queue-number {
+    margin-top: 7px;
+    display: flex;
+    height: 72px;
+    width: 72px;
+    padding: 8px 25px 7px 25px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #C3C3C3;
+}
