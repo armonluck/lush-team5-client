@@ -7,9 +7,10 @@ const BuyAgain = () => {
         w: '101px',
         h: '112px',
         p: '8px 15px 10px 16px',
-        bg: '#D7D7D7',
+        bg: '#E2D7FC',
         color: '#000', 
-        boxShadow: '-4px 5px 14px 0px rgba(0, 0, 0, 0.15)'
+        boxShadow: '-4px 5px 14px 0px rgba(0, 0, 0, 0.15)',
+        borderRadius: '10px'
     };
 
     return(
