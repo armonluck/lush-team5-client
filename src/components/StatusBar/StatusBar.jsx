@@ -1,4 +1,4 @@
-import { Box, Text, Flex } from '@chakra-ui/react';
+import { Text, Flex } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import format from 'date-fns/format';
 import enUS from 'date-fns/locale/en-US';
@@ -21,9 +21,9 @@ const StatusBar = () => {
     const formatTime = format(currentTime, 'h:mm', { locale: enUS });
 
     return (
-        <Flex justifyContent='center'>
+        <Flex background= 'var(--neutral-900, #282121)' justifyContent='center'>
             <img className='notchIcon' src={NotchIcon} alt='Notch' />
-                <Text className='time' color='black'>{formatTime}</Text>
+                <Text className='time' color='white'>{formatTime}</Text>
                 <Flex position='absolute' right='0' gap='8px' padding='20px 26.6px 15px 0'>
                     <img className='mobileSignalIcon'src={MobileSignalIcon} alt='Mobile Signal' />
                     <img className='wifiIcon'src={WifiIcon} alt='Wifi' />
