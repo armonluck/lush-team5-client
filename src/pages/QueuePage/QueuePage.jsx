@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Flex, Text, Box, VStack } from '@chakra-ui/react';
+import PurchasedItemBox from '../../components/PurchasedItemBox/PurchasedItemBox';
 import './QueuePage.scss'
 
 const QueuePage = () => {
@@ -10,6 +11,7 @@ const QueuePage = () => {
                 <Text fontFamily='Lush Handwritten' fontSize='30px' pb='16px'>
                 Purchase Completed
                 </Text>
+                <PurchasedItemBox />
                 <Box w='348px' h='auto' pt='24px'>
                     <VStack spacing={0} alignItems='flex-start' gap='20px'>
                         <Text className='ready-message'>
