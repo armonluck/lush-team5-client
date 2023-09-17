@@ -1,0 +1,38 @@
+@import '../../styles/globals.scss';
+
+.bestSellers {
+    font-family: 'Lush Handwritten'; 
+    font-size: 12px;
+    padding: 8px 8px 2px 9px; 
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    z-index: 4;
+    top: 0;
+}
+
+.layerTwo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 143px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.layerOne {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 101px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.bestSellersIcon {
+    position: absolute;
+    bottom: 31px;
+    height: 50px;
+    width: 50px;
+    z-index: 3;
+}
