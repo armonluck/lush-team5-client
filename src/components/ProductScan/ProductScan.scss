@@ -1,5 +1,13 @@
 .shrinked {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
+  will-change: transform;
+  opacity: 100;
+  
+  
+}
+
+.shrinked .close-icon {
+    backface-visibility: hidden;
 }

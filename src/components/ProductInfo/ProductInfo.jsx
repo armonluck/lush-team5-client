@@ -1,87 +1,82 @@
+import React from "react";
 import {
-    Box,
-    Heading,
-    Flex,
-    Spacer,
-    Input,
-    Button,
-    FormControl,
-    FormLabel,
-    Stack,
-    Select,
-    Text,
-    Image,
-  } from "@chakra-ui/react";
-  import { CloseIcon, StarIcon } from "@chakra-ui/icons";
-  import BathBomb from "../../assets/images/Lush-Melusine-Bath-Bomb.png";
-  import LighteningIcon from "../../assets/icons/lightning-icon-by-png-tree.png";
-  import { Link } from "react-router-dom";
-  
-  const ProductInfo = () => {
-    return (
-      <Box maxW='md' p="0" borderWidth="1px" borderRadius="lg" bg="#C4C4C473">
-        <Flex padding='4' justify="flex-start" align="center">
-          <CloseIcon />
-          {/* <Heading as="h2" size="md" ml="6">
-            Lens has found 1 result
-          </Heading> */}
-        </Flex>
-  
-        <Box bgBlendMode="overlay">
-          <Image src={BathBomb} alt="placeholder image" />
-        </Box>
-        <Box>
-          <Flex
-            align="center"
-            justify="flex-start"
-            bg="black"
-            display="inline-flex"
-          >
-            <Image src={LighteningIcon} alt="placeholder image" boxSize="5" />
-            <Heading as="h3" size="sm" color="white">
-              LIMITED EDITION
-            </Heading>
-          </Flex>
-          <Flex padding='2' height='40' direction='column' justify='space-between' ml={4}>
-            <Flex direction='column'>
-              <Text fontFamily="Lush Handwritten Compressed">
-                LORD OF MISRULE
-              </Text>
-              <Spacer/>
-              <Text fontSize={"small"}>BATH BOMB</Text>
-            </Flex>
-  
-            <Flex direction='column'>
-              <Text fontSize={"small"}>Sweet, peppery celebration</Text>
-              <Spacer/>
-              <Flex justify="space-between" width="18%">
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
-            </Flex>
-            </Flex>
-  
-            <Flex align='center'>
-              <Box width="50%">
-                <text>$9.00</text>
-              </Box>
-              <Flex>
-                <Select mr='2' width="15" bg="white" placeholder="x2">
-                  <option value={1}>x1</option>
-                  <option value={2}>x2</option>
-                  <option value={3}>x3</option>
-                  <option value={4}>x4</option>
-                </Select>
-                <Button bg="black" textColor="white" variant="solid">
-                  Add to cart
-                </Button>
-              </Flex>
-            </Flex>
-          </Flex>
-        </Box>
+  Box,
+  Heading,
+  Flex,
+  Spacer,
+  Input,
+  Button,
+  FormControl,
+  FormLabel,
+  Stack,
+  Select,
+  Text,
+  Image,
+} from "@chakra-ui/react";
+import { CloseIcon, StarIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
+
+const ProductInfo = () => {
+  return (
+    <Box>
+      <Box p={4}>
+        <Heading as="h2" size="lg" mb={4}>
+          Your Impact with Lush
+        </Heading>
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          viverra, est id varius dignissim, libero quam bibendum arcu.
+        </Text>
       </Box>
-    );
-  };
-  
-  export default ProductInfo;
-  
+
+      {/* Your Impact */}
+      <Box p={4}>
+        <Heading as="h2" size="lg" mb={4}>
+          Your Impact
+        </Heading>
+        <Text>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia Curae; Vivamus euismod arcu id neque vehicula
+          consectetur.
+        </Text>
+      </Box>
+
+      <Box p={4}>
+        <Heading as="h2" size="lg" mb={4}>
+          You Might Also Like
+        </Heading>
+        <RelatedProducts />
+      </Box>
+    </Box>
+  );
+};
+
+export default ProductInfo;
+
+const RelatedProducts = () => {
+  const relatedProducts = [
+    {
+      id: 1,
+      name: "Product 1",
+      image: "product1.jpg",
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      image: "product2.jpg",
+    },
+  ];
+
+  return (
+    <Flex>
+      {relatedProducts.map((product) => (
+        <Box key={product.id} p={2} m={2} borderWidth="1px" borderRadius="md">
+          <Heading as="h3" size="md" mt={2}>
+            {product.name}
+          </Heading>
+
+        </Box>
+      ))}
+    </Flex>
+  );
+};
