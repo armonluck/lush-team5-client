@@ -7,14 +7,20 @@ import { ReactComponent as AccountIcon } from "../../assets/icons/account-svgrep
 import {Link, useNavigate} from 'react-router-dom'
 import { useState, useEffect, useRef } from "react";
 
-function NavBar(isLoggedIn){
+function NavBar({isLoggedIn, cart}){
     const [searchPopup, setSearchPopup] = useState(false)
     const [searchInput, setSearchInput] = useState('')
     const [selectedIcon, setSelectIcon] = useState('')
     const searchIconRef = useRef(null);
     const navigate = useNavigate();
 
-
+    const setStroke = {
+        svg: {
+            path:{
+                stroke:'white'
+        }
+    }
+    }
 
     const popup = ()=>{
 
@@ -51,7 +57,7 @@ function NavBar(isLoggedIn){
   }, []);
 
     return(
-        <Flex flexDirection='column' justifyContent="center" position="fixed" bottom={searchPopup?"-3rem":"0"} alignItems='center' width='100vw' 
+        <Flex bg='white' zIndex='5' flexDirection='column' justifyContent="center" position="fixed" bottom={searchPopup?"-3rem":"0"} alignItems='center' width='100vw' 
         transition='border 5s ease-in-out, border-radius 0s'
         borderRadius={searchPopup?"25px":"none"} 
         borderBottom="none"
@@ -83,25 +89,25 @@ function NavBar(isLoggedIn){
                     <Flex flexDirection='row' justifyContent="space-between" alignItems='center'>
                         <Box padding='1rem'>
                             <Link to="/" onClick={()=>setSelectIcon('home')}>
-                                <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'black'}/>
+                                <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
-                            <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} fill={selectedIcon==='search'?"rgb(180, 157, 253)":'none'} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":'black'}/>
+                            <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":'none'}/>
                         </Box>
                         <Box padding='1rem'>
                             <Link to="/" onClick={()=>setSelectIcon('camera')}>
-                                <CameraIcon height='3vh' width='auto'  fill={selectedIcon==='camera'?"rgb(180, 157, 253)":'black'}/>
+                                <CameraIcon height='3vh' width='auto'  fill={selectedIcon==='camera'?"rgb(180, 157, 253)":'white'} sx={setStroke}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
                             <Link to='/cart' onClick={()=>setSelectIcon('cart')}>
-                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'}/>
+                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} sx={setStroke}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
                             <Link to={isLoggedIn?'/profile':'/login'} onClick={()=>setSelectIcon('account')}>
-                                <AccountIcon height='3vh' width='auto'  fill={selectedIcon==='account'?"rgb(180, 157, 253)":'black'}/>
+                                <AccountIcon height='3vh' width='auto'  fill={selectedIcon==='account'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>
                     </Flex>

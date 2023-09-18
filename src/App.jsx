@@ -11,16 +11,16 @@ import {useState} from 'react'
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
-
+  const [cart,setCart] =useState([]);
 
   return (
     <BrowserRouter>
     <StatusBar />
-    <NavBar isLoggedIn={isLoggedIn}/>
+    <NavBar isLoggedIn={isLoggedIn} cart={cart}/>
       <Routes>
         <Route path='/' element='' />
-        <Route path='/login' element={<LoginPage/>} />
-        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/login' element={<LoginPage setLoggedIn={setLoggedIn}/>} />
+        <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn}/>} />
         <Route path='/queue' element={<QueuePage />} />
       </Routes>
     </BrowserRouter>
