@@ -1,11 +1,5 @@
 @import '../../styles/globals.scss';
 
-.bathBombIcon {
-    width: 98px;
-    height: 98px;
-    margin: 12px 21px 14px 16px;
-};
-
 .purchase-date {
     color: #000;
     font-family: Helvetica;
@@ -38,3 +32,30 @@
     line-height: normal;
     text-decoration-line: underline;
 };
+
+.bathBombThree {
+    position: absolute;
+    top: 8px;
+    left: 73px;
+    height: 71px;
+    width: 71px;
+    z-index: 1;
+}
+
+.bathBombTwo {
+    position: absolute;
+    top: 0;
+    padding: 12px 0 0 12px;
+    height: 64px;
+    width: 64px;
+    z-index: 2;
+}
+
+.bathBombOne {
+    position: relative;
+    height: 98px;
+    width: 98px;
+    z-index: 3;
+    margin-left: 28px;
+    top: 12px;
+}
