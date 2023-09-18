@@ -27,7 +27,7 @@ const QueuePage = () => {
                 </Text>
                 <VStack spacing='24px' className='queue-number'>
                     <img className='ClockIcon'src={ClockIcon} alt='Clock'/>
-                    <Text fontFamily='Helvetica' color= 'white' fontSize='30px'>3 Minutes</Text>
+                    <Text fontFamily='Helvetica' color= 'white' fontSize='30px'>3 minutes</Text>
                 </VStack>
             </VStack>
         </Flex>
