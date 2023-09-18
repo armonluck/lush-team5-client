@@ -1,7 +1,24 @@
-import React from 'react'
+import React from 'react';
+import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+    Box,
+    Heading,
+    Icon,
+    List,
+    ListItem,
+    UnorderedList,
+    Text,
+} from '@chakra-ui/react';
+import '../styles/_fonts.scss';
 
-export default function AboutProduct() {
+function AboutProduct() {
   return (
     <div>AboutProduct</div>
   )
 }
+
+export default AboutProduct;
