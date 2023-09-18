@@ -35,10 +35,16 @@ function AboutProduct() {
                         </AccordionButton>
                     </h3>
                     <AccordionPanel pb={4}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        <Text fontSize='12px' fontWeight='400' lineHeight='normal'>
+                            Fill your bathtub with warm water, drop in the bath bomb and lie back to enjoy its lovely color and gorgeous fragrance.
+                        </Text>
+                        <br />
+                        <Heading as='h4' fontSize='12px' fontWeight='700' lineHeight='normal'>
+                            Storage
+                        </Heading>
+                        <Text fontSize='12px' fontWeight='400' lineHeight='normal'>
+                            Keep bath bombs fresh and dry in one of our product holders, a big glass jar or anything else that keeps them away from water.
+                        </Text>
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -55,10 +61,7 @@ function AboutProduct() {
                         </AccordionButton>
                     </h3>
                     <AccordionPanel pb={4} fontSize='12px' fontWeight='400' lineHeight='normal'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        Sodium Bicarbonate (Sodium Bicarbonate) , Citric Acid (Citric Acid) , Corn Starch (Zea Mays (Corn) Starch) , Black Pepper Oil (Piper nigrum) , Dark Sumatran Patchouli Oil (Pogostemon Cablin) , Vanilla Absolute (Vanilla planifolia) , Water (Aqua) , Titanium Dioxide , Dipropylene Glycol (Dipropylene Glycol) , Sodium Coco Sulfate , Propylene Glycol , Synthetic Fluorphlogopite , Tin Oxide (Tin oxide) , Cocamidopropyl Betaine , *Limonene , *Linalool (Linalool) , Fragrance (Fragrance)
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -75,10 +78,7 @@ function AboutProduct() {
                         </AccordionButton>
                     </h3>
                     <AccordionPanel pb={4} fontSize='12px' fontWeight='400' lineHeight='normal'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        Herbal | Sweet
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
