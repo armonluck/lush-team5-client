@@ -2,13 +2,18 @@
 import { Box, Heading, Input, Button, FormControl,Stack, Flex } from "@chakra-ui/react";
 import {Link, useNavigate} from 'react-router-dom'
 import axios from "axios";
-import { useRef } from "react";
-
+import { useRef, useEffect, useState } from "react";
+import { motion, useAnimation  } from "framer-motion";
 
 
 const LoginForm = ({}) => {
   const navigate = useNavigate();
+  // const [headingVisible, setHeadingVisible] = useState(false);
+  const [formVisible, setFormVisible] = useState(false);
+  const controls = useAnimation()
   const formRef = useRef();
+  const [formHeight, setFormHeight] = useState(0);
+  const [containerHeight, setContainerHeight] = useState("auto")
   const buttonStyle = {
     bg: "rgb(180, 157, 253)",
     fontFamily:'Lush Handwritten Compressed',
@@ -16,6 +21,34 @@ const LoginForm = ({}) => {
   }
 
   const URL = 'http://localhost:5000/api/v1/users'
+
+    // Use useEffect to trigger the heading animation after the component mounts
+    useEffect(() => {
+    //   setTimeout(() => {
+    //     setHeadingVisible(true);
+    //   }, 100);
+  
+      // Use another timeout to make the form visible after 1 second
+      setTimeout(() => {
+        setFormVisible(true);
+      }, 5000);
+    }, []);
+    
+    useEffect(() => {
+      const animateHeading = async () => {
+        // Animate the heading to its final position
+        await controls.start({
+          opacity: 1,
+          y: 0,
+          transition: { duration: 2, delay: 0 },
+        });
+  
+        // After the heading animation is complete, show the form
+      };
+  
+      // Trigger the heading animation
+      animateHeading();
+    }, [controls]);
 
   const handleSubmit = (e)=>{
      e.preventDefault();
@@ -36,10 +69,25 @@ const LoginForm = ({}) => {
   return (
     <Box maxW="sm" p="4">
         <Flex justifyContent="center" alignItems="center">
-          <Heading as="h1" fontSize="4rem" mb="10rem" fontFamily='Lush Handwritten Compressed' color="white">
-            LUSH
-          </Heading>
+
+                       <motion.div
+                       initial={{ opacity: 0, y: 0 }} // Initial state (hidden)
+                       animate={controls} // Visible state
+                      //  transition={{ duration: 6, delay: 1 }} // Transition duration with delay
+                   >
+                <Heading as="h1" fontSize="4rem" mb="10rem" fontFamily='Lush Handwritten Compressed' color="white">
+                  LUSH
+                </Heading>
+          </motion.div>
+
+    
         </Flex>
+        {formVisible &&
+          <motion.div
+          initial={{ opacity: 0 }} // Initial state (hidden)
+          animate={{ opacity: 1, scale: 1, height: 'auto' }}  // Visible state
+          transition={{ duration: 5 }} // Transition duration
+        >
         <form onSubmit={handleSubmit} ref={formRef}>
           <Stack spacing="2rem">
             <FormControl id="username">
@@ -56,7 +104,10 @@ const LoginForm = ({}) => {
               </Button>
           </Flex>
         </form>
+        </motion.div>
+        }
       </Box>
+
   );
 };
 
