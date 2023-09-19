@@ -98,6 +98,152 @@ function LandingHeader() {
                     </Text>
                 </CardBody>
             </Card>
+
+            <Button onClick={onOpen} variant='unstyled' fontFamily='Helvetica' fontSize='12px' textDecoration='underline' fontWeight='400' color='#FFF' lineHeight='normal'>
+                change store
+            </Button>
+            <Flex width='100%' h='100%' alignContent='center' justifyContent='center'>
+                <Drawer
+                    placement='top'
+                    size='full'
+                    isOpen={isOpen}
+                    onClose={onClose}
+                    finalFocusRef={btnRef}
+                    margin='auto'
+                >
+                    <DrawerOverlay />
+                    <DrawerContent bg='#645C5C'>
+                        <DrawerCloseButton color='white' />
+                        <DrawerHeader></DrawerHeader>
+
+                        <DrawerBody>
+                            <InputGroup>
+                                <InputLeftElement>
+                                    <SearchIcon color='#FFF' />
+                                </InputLeftElement>
+
+                                <Input
+                                    variant='outline'
+                                    color='#FFF'
+                                    border='1px solid #FFF'
+                                    borderRadius='0'
+                                    placeholder='Enter zipcode...'
+                                />
+                                <InputRightElement>
+                                    <Icon marginRight='10px' color='#FFF' w='20px' h='20px' viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Vector" d="M1.66663 9.99999H4.16663M15.8333 9.99999H18.3333M9.99996 1.66666V4.16666M9.99996 15.8333V18.3333" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path id="Vector_2" d="M9.99996 15.8333C13.2216 15.8333 15.8333 13.2217 15.8333 9.99999C15.8333 6.77833 13.2216 4.16666 9.99996 4.16666C6.7783 4.16666 4.16663 6.77833 4.16663 9.99999C4.16663 13.2217 6.7783 15.8333 9.99996 15.8333Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </Icon>
+                                </InputRightElement>
+                            </InputGroup>
+
+                            <Flex direction='column'>
+                                <Heading as='h2' color='#FFF' fontFamily='Helvetica' fontSize='15px' fontWeight='700' lineHeight='normal' marginTop='20px' marginBottom='9px'>
+                                    Current Store:
+                                </Heading>
+                                <Card
+                                    key={selectedStore?.id}
+                                    direction='row'
+                                    overflow='hidden'
+                                    variant='unstyled'
+                                    borderRadius='0'
+                                    bg='#645C5C'
+                                    color='#FFF'
+                                >
+                                    <Image
+                                        objectFit='cover'
+                                        bg='#D9D9D9'
+                                        w='115px'
+                                        h='115px'
+                                        mr='1rem'
+                                        src={selectedStore?.image}
+                                        alt='Image of a store front'
+                                    />
+
+                                    <Stack>
+                                        <CardBody>
+                                            <Heading fontFamily='LushHandwritten-Bold' fontSize='1rem' lineHeight='normal' pb='4px'>
+                                                {selectedStore?.store_name}
+                                            </Heading>
+
+                                            <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' pb='24px'>
+                                                Distance {selectedStore?.distance} miles
+                                            </Text>
+                                            <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' >
+                                                {selectedStore?.street}
+                                            </Text>
+                                            <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' m='0'>
+                                                {selectedStore?.city}
+                                            </Text>
+                                        </CardBody>
+                                        <CardFooter>
+                                        </CardFooter>
+                                    </Stack>
+                                </Card>
+
+                                <Heading as='h2' color='#FFF' fontFamily='Helvetica' fontSize='15px' fontWeight='700' lineHeight='normal' marginTop='22px' marginBottom='9px'>
+                                    Stores near you:
+                                </Heading>
+                                {stores
+                                    .filter((store) => selectedStore?.id !== store?.id)
+                                    .map((store) => (
+                                        <Card
+                                            key={store.id}
+                                            direction='row'
+                                            overflow='hidden'
+                                            variant='unstyled'
+                                            borderRadius='0'
+                                            mb='20px'
+                                            bg='#645C5C'
+                                            color='#FFF'
+                                        >
+                                            <Image
+                                                onClick={() => handleStoreClick(store.id)}
+                                                objectFit='cover'
+                                                bg='#D9D9D9'
+                                                w='115px'
+                                                h='115px'
+                                                mr='1rem'
+                                                src={store?.image}
+                                                alt='Image of a store front'
+                                            />
+
+                                            <Stack>
+                                                <CardBody>
+                                                    <Heading fontFamily='Helvetica' fontSize='1rem' lineHeight='normal' pb='4px'>
+                                                        {store?.store_name}
+                                                    </Heading>
+
+                                                    <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' pb='24px'>
+                                                        Distance {store?.distance} miles
+                                                    </Text>
+                                                    <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' >
+                                                        {store?.street}
+                                                    </Text>
+                                                    <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' m='0'>
+                                                        {store?.city}
+                                                    </Text>
+                                                </CardBody>
+                                                <CardFooter>
+                                                </CardFooter>
+                                            </Stack>
+                                        </Card>
+                                    ))}
+                            </Flex>
+
+                        </DrawerBody>
+
+                        {/* <DrawerFooter>
+                            <Button variant='outline' mr={3} onClick={onClose}>
+                                Cancel
+                            </Button>
+                            <Button colorScheme='blue'>
+                                Save
+                            </Button>
+                        </DrawerFooter> */}
+                    </DrawerContent>
+                </Drawer>
+            </Flex>
         </Box>
     )
 }
