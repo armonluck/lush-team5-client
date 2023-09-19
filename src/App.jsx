@@ -4,6 +4,7 @@ import StatusBar from './components/StatusBar/StatusBar';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import QueuePage from './pages/QueuePage/QueuePage';
+import LandingHeader from './components/LandingHeader';
 import './styles/_globals.scss';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/login' element={<LoginPage/>} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/queue' element={<QueuePage />} />
+        <Route path='/landing' element={<LandingHeader />} />
       </Routes>
     </BrowserRouter>
   );
