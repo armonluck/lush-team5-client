@@ -244,6 +244,13 @@ function LandingHeader() {
                     </DrawerContent>
                 </Drawer>
             </Flex>
+
+            <Heading paddingTop='20px' color='#E2D7FC' textShadow='-4px 5px 14px rgba(255, 255, 255, 0.15)' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal'>
+                Your Impact:
+            </Heading>
+            <Text paddingTop='9px' color='#FFF' fontFamily='Helvetica' fontSize='15px' fontWeight='400' lineHeight='normal'>
+                “We Believe” has been Lush's mantra since we first opened. Your shopping experience should also reflect that. At Lush, do good by shopping well - see your impact with every purchase below!
+            </Text>
         </Box>
     )
 }
