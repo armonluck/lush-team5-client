@@ -14,8 +14,10 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { CloseIcon, StarIcon } from "@chakra-ui/icons";
-import BathBomb from "../../assets/images/Lush-Melusine-Bath-Bomb.png";
-import LighteningIcon from "../../assets/icons/lightning-icon-by-png-tree.png";
+import BathBomb from "../../assets/images/Bathbomb_1-transformed.png";
+import vegan from "../../assets/icons/vegan icon.png";
+import LighteningIcon from "../../assets/icons/mdi_lightning-bolt.png";
+import Productbg from "../../assets/images/bathbomb background.png"
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./ProductScan.css";
@@ -44,7 +46,7 @@ const ProductScan = () => {
   };
   return (
     <Box className={isShrunk ? "shrinked" : ""}>
-      <Box maxW="md" p="0" borderWidth="1px" borderRadius="lg" bg="black">
+      <Box maxW="md" p="0" borderWidth="1px" borderRadius="lg" bg="#2A2323">
         <Flex
           // opacity={isShrunk ? "0" : ""}
           align="center"
@@ -55,7 +57,7 @@ const ProductScan = () => {
             className={isShrunk ? "close-icon" : ""}
             justifySelf="flex-start"
           />
-          <Heading as="h2" size="md" ml="10" color="white">
+          <Heading as="h2" size="md" ml="10" color="white" fontFamily='Helvetica' fontSize='15px' fontWeight='400'>
             Lens has found 1 result
           </Heading>
         </Flex>
@@ -65,25 +67,28 @@ const ProductScan = () => {
           ml="3"
           mr="3"
           mb="3"
-          bg="white"
+          className='product__product-card'
           borderRadius="lg"
         >
-          <Flex justify="center" align="center" bgBlendMode="overlay">
+          <Flex justify="center" align="center" mb='46px' mt='11px' mr='10px' ml='19px'>
             <Image
               height={isShrunk ? 200 : ""}
               src={BathBomb}
-              alt="placeholder image"
+              alt="bathbomb placeholder"
             />
           </Flex>
           <Box>
             <Flex
               align="center"
               justify="flex-start"
-              bg="black"
+              bg="#282121"
               display="inline-flex"
+              padding='2'
+              borderRadius='md'
+              mb='16px'
             >
               <Image src={LighteningIcon} alt="placeholder image" boxSize="5" />
-              <Heading as="h3" size="sm" color="white">
+              <Heading as="h3" size="sm" color="white" fontFamily='Helvetica'>
                 LIMITED EDITION
               </Heading>
             </Flex>
@@ -95,15 +100,21 @@ const ProductScan = () => {
               ml={4}
             >
               <Flex direction="column">
+              <Text fontSize={"small"} fontFamily='Helvetica'>BATH BOMB</Text>
+              <Spacer/>
+              <Flex align='center'>
                 <Text fontFamily="Lush Handwritten Compressed">
                   LORD OF MISRULE
                 </Text>
-                <Spacer />
-                <Text fontSize={"small"}>BATH BOMB</Text>
+                <Image src={vegan} boxSize='4' ml='12px'/>
+
+                </Flex>
+                
+                
               </Flex>
 
               <Flex direction="column">
-                <Text fontSize={"small"}>Sweet, peppery celebration</Text>
+                <Text fontSize={"small"} fontFamily='Helvetica'>Sweet, peppery celebration</Text>
                 <Spacer />
                 <Flex justify="space-between" width="18%">
                   <StarIcon />
@@ -114,15 +125,15 @@ const ProductScan = () => {
 
               <Flex align="center">
                 <Box width="50%">
-                  <text>$9.00</text>
+                  <text fontFamily='Helvetica'>$9.00</text>
                 </Box>
                 <Flex>
                   <Select
                     mr="2"
                     width="20"
                     bg="white"
-                    placeholder="x2"
-                    boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
+                    boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)"
+                    bgColor='white'
                   >
                     <option value={1}>x1</option>
                     <option value={2}>x2</option>
