@@ -20,7 +20,7 @@ const LoginForm = ({}) => {
     ':hover':{ bg: 'white' }
   }
 
-  const URL = 'http://localhost:5000/api/v1/users'
+  // const URL = 'http://localhost:5051/api/v1/users'
 
     // Use useEffect to trigger the heading animation after the component mounts
     useEffect(() => {
@@ -39,20 +39,21 @@ const LoginForm = ({}) => {
      e.preventDefault();
      const {username, password} = formRef.current;
       console.log(username.value, password.value)
-     axios.post(URL,
-      {username:username.value, 
-        password:password.value})
-        .then((response)=>{
-          if(response.data.success){
-            navigate('../home')
-          }
+    //  axios.post(URL,
+    //   {username:username.value, 
+    //     password:password.value})
+    //     .then((response)=>{
+    //       if(response.data.success){
+    //         navigate('../home')
+    //       }
           
-        })
-        .catch((err)=>console.log(err))
+    //     })
+    //     .catch((err)=>console.log(err))
+        navigate('../home')
   }
   
   return (
-    <Box maxW="sm" p="4">
+    <Box maxW="sm" p="0">
         <Flex justifyContent="center" alignItems="center">
 
                        <motion.div
@@ -63,15 +64,15 @@ const LoginForm = ({}) => {
                 <Heading as="h1" fontSize="4rem" fontFamily='Lush Handwritten Compressed' color="white">
                   LUSH
                 </Heading>
-          </motion.div>
-
-    
+          </motion.div>    
         </Flex>
         {formVisible &&
           <motion.div
           initial={{ opacity: 0 }} // Initial state (hidden)
           animate={{ opacity: 1}}  // Visible state
           transition={{ duration: 5 }} // Transition duration
+          padding='0'
+      
         >
         <form onSubmit={handleSubmit} ref={formRef}>
           <Stack spacing="1rem" width='90vw'>
