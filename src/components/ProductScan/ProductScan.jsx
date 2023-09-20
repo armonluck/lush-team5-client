@@ -3,22 +3,15 @@ import {
   Heading,
   Flex,
   Spacer,
-  Input,
   Button,
-  FormControl,
-  FormLabel,
-  Stack,
   Select,
   Text,
   Image,
-  Center,
 } from "@chakra-ui/react";
 import { CloseIcon, StarIcon } from "@chakra-ui/icons";
 import BathBomb from "../../assets/images/Bathbomb_1-transformed.png";
 import vegan from "../../assets/icons/vegan icon.png";
 import LighteningIcon from "../../assets/icons/mdi_lightning-bolt.png";
-import Productbg from "../../assets/images/bathbomb background.png"
-import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./ProductScan.css";
 
@@ -54,21 +47,23 @@ const ProductScan = () => {
         >
           <CloseIcon
             color="white"
+            ml='16px'
             className={isShrunk ? "close-icon" : ""}
             justifySelf="flex-start"
           />
-          <Heading as="h2" size="md" ml="10" color="white" fontFamily='Helvetica' fontSize='15px' fontWeight='400'>
+          <Heading as="h2" size="md" ml="10" color="white" fontFamily='Helvetica' fontSize='20px' fontWeight='400' lineHeight='auto'>
             Lens has found 1 result
           </Heading>
         </Flex>
 
         <Flex
           direction="column"
-          ml="3"
-          mr="3"
-          mb="3"
+          ml="20px"
+          mr="20px"
+          mb="16px"
           className='product__product-card'
           borderRadius="lg"
+          height='auto'
         >
           <Flex justify="center" align="center" mb='46px' mt='11px' mr='10px' ml='19px'>
             <Image
@@ -83,23 +78,23 @@ const ProductScan = () => {
               justify="flex-start"
               bg="#282121"
               display="inline-flex"
-              padding='2'
+              pr='5'
+              pt='0.5'
               borderRadius='md'
-              mb='16px'
+              pl='3'
             >
-              <Image src={LighteningIcon} alt="placeholder image" boxSize="5" />
-              <Heading as="h3" size="sm" color="white" fontFamily='Helvetica'>
+              <Image src={LighteningIcon} alt="placeholder image" boxSize="7" />
+              <Heading as="h3" size="sm" color="white" fontFamily='Helvetica' letterSpacing='widest' fontSize='14px'>
                 LIMITED EDITION
               </Heading>
             </Flex>
             <Flex
               padding="2"
-              height="40"
               direction="column"
               justify="space-between"
               ml={4}
             >
-              <Flex direction="column">
+              <Flex direction="column" mt='16px'>
               <Text fontSize={"small"} fontFamily='Helvetica'>BATH BOMB</Text>
               <Spacer/>
               <Flex align='center'>
@@ -113,19 +108,19 @@ const ProductScan = () => {
                 
               </Flex>
 
-              <Flex direction="column">
+              <Flex direction="column" mb='19px' mt='4px'>
                 <Text fontSize={"small"} fontFamily='Helvetica'>Sweet, peppery celebration</Text>
-                <Spacer />
-                <Flex justify="space-between" width="18%">
+                <Spacer/>
+                <Flex justify="space-between" mt='10px' width="18%">
                   <StarIcon />
                   <StarIcon />
                   <StarIcon />
                 </Flex>
               </Flex>
 
-              <Flex align="center">
+              <Flex align="center" mb='31px'>
                 <Box width="50%">
-                  <text fontFamily='Helvetica'>$9.00</text>
+                  <text fontFamily='Helvetica' fontWeight='bold' >$9.50</text>
                 </Box>
                 <Flex>
                   <Select
@@ -134,6 +129,7 @@ const ProductScan = () => {
                     bg="white"
                     boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)"
                     bgColor='white'
+                    mt='1'
                   >
                     <option value={1}>x1</option>
                     <option value={2}>x2</option>
@@ -145,6 +141,7 @@ const ProductScan = () => {
                     textColor="white"
                     variant="solid"
                     onClick={addToCart}
+                    height='50px'
                   >
                     Add to cart
                   </Button>

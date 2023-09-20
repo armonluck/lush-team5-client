@@ -3,18 +3,8 @@ import {
   Box,
   Heading,
   Flex,
-  Spacer,
-  Input,
-  Button,
-  FormControl,
-  FormLabel,
-  Stack,
-  Select,
   Text,
-  Image,
 } from "@chakra-ui/react";
-import { CloseIcon, StarIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
 
 const ProductInfo = () => {
   return (

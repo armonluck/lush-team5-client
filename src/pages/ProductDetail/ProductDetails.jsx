@@ -1,6 +1,5 @@
 import ProductScan from '../../components/ProductScan/ProductScan'
 import ProductInfo from '../../components/ProductInfo/ProductInfo'
-import { useEffect, useState } from 'react'
 import './ProductDetails.css'
 
 function ProductDetails() {
@@ -8,7 +7,7 @@ function ProductDetails() {
     return (
       <div>
         <ProductScan/>
-        <ProductInfo />
+        <ProductInfo/>
       </div>
     );
   }
