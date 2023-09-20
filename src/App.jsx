@@ -24,34 +24,29 @@ function App() {
 
   return (
     <BrowserRouter>
-    <StatusBar />
+      <StatusBar />
       <ChakraProvider>
-      <Routes>
-        <Route
-          path='/*'
-          element={
-            isLoggedIn ? (
-              <>
-                <NavBar isLoggedIn={isLoggedIn} cart={cart} />
-                {/* Other routes */}
-                <Route path='/' element=''/>
-                <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
-                <Route path='/queue' element={<QueuePage />} />
-                <Route path='/about-product' element={<AboutProduct />} />
-                <Route path='/landing' element={<LandingHeader />} />
-                <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw">
-                  <Route path="/CircleSlider" element={<CircleSlider />} /> 
-                  <Route path="/CheckoutProduct" element={<CheckoutProductCard />} />
-                  <Route path="/RecommendedProducts" element={<RecommendedProducts />} />
-                </Box>
-              </>
-            ) : (
-              <Navigate to='/login' replace />
-            )
+          {isLoggedIn ? <NavBar isLoggedIn={isLoggedIn} cart={cart} /> : null}
+          {isLoggedIn ?
+            (<Routes>
+              {/* <Route path='/' element='' /> */}
+              <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
+              <Route path='/queue' element={<QueuePage />} />
+              <Route path='/about-product' element={<AboutProduct />} />
+              <Route path='/landing' element={<LandingHeader />} />
+              {/* TODO: move Box elsewhere, cannot be placed under routes, else results in an error */}
+              {/* <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw"> */}
+                <Route path="/CircleSlider" element={<CircleSlider />} />
+                <Route path="/CheckoutProduct" element={<CheckoutProductCard />} />
+                <Route path="/RecommendedProducts" element={<RecommendedProducts />} />
+              {/* </Box> */}
+        </Routes>)
+        :
+          (        
+          <Routes>
+              <Route path='/login' element={<LoginPage setLoggedIn={setLoggedIn} />} />
+        </Routes>)
           }
-        />
-      <Route path='/login' element={<LoginPage setLoggedIn={setLoggedIn} />} />
-      </Routes>
       </ChakraProvider>
     </BrowserRouter>
   );
