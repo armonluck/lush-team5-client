@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { SearchIcon } from '@chakra-ui/icons';
+import { SearchIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import {
     Drawer,
     DrawerBody,
@@ -27,6 +27,7 @@ import {
     Image,
     Heading,
     Text,
+    Link,
 } from '@chakra-ui/react';
 
 import '../styles/_fonts.scss';
@@ -84,17 +85,17 @@ function LandingHeader() {
     return (
         <Box p='20px' bg='#282121'>
             <Heading
-                fontFamily='LushHandwritten-Bold' fontSize='1.5rem' color='#B9A6F0' lineHeight='normal' textShadow='-4px 5px 14px rgba(255, 255, 255, 0.15)'>
+                fontFamily='LushHandwritten-Bold' fontSize='24px' color='#B9A6F0' fontWeight='700' lineHeight='normal' textShadow='-4px 5px 14px rgba(255, 255, 255, 0.15)'>
                 Welcome to Lush
             </Heading>
-            <Text marginTop='4px' fontFamily='Helvetica' fontSize='1rem' color='#FFF' lineHeight='normal' textTransform='uppercase'>
+            <Text marginTop='4px' fontFamily='LushHandwritten-Bold' fontSize='40px' color='#FFF' lineHeight='normal' fontWeight='700' textTransform='uppercase'>
                 Hi, Natasha
             </Text>
 
             <Card mt='37px' borderRadius='999px' textAlign='center' bg='#F3F2F3' boxShadow='-4px 5px 14px 0px rgba(255, 255, 255, 0.15)' h='42px' d='flex' align='center' justify='center'>
                 <CardBody>
-                    <Text fontFamily='LushHandwritten-Bold' fontWeight='700' fontSize='16px' lineHeight='normal'>
-                        Your Store: {selectedStore?.street}.
+                    <Text color='#000' fontFamily='Helvetica' fontWeight='700' fontSize='16px' lineHeight='normal'>
+                        Your Store: {selectedStore?.store_name}.
                     </Text>
                 </CardBody>
             </Card>
@@ -117,14 +118,13 @@ function LandingHeader() {
                         <DrawerHeader></DrawerHeader>
 
                         <DrawerBody>
-                            <InputGroup>
+                            <InputGroup color='#FFF'>
                                 <InputLeftElement>
-                                    <SearchIcon color='#FFF' />
+                                    <SearchIcon />
                                 </InputLeftElement>
 
                                 <Input
                                     variant='outline'
-                                    color='#FFF'
                                     border='1px solid #FFF'
                                     borderRadius='0'
                                     placeholder='Enter zipcode...'
@@ -162,7 +162,7 @@ function LandingHeader() {
 
                                     <Stack>
                                         <CardBody>
-                                            <Heading fontFamily='LushHandwritten-Bold' fontSize='1rem' lineHeight='normal' pb='4px'>
+                                            <Heading fontFamily='Helvetica' fontSize='1rem' lineHeight='normal' fontWeight='700' pb='4px'>
                                                 {selectedStore?.store_name}
                                             </Heading>
 
@@ -210,7 +210,7 @@ function LandingHeader() {
 
                                             <Stack>
                                                 <CardBody>
-                                                    <Heading fontFamily='Helvetica' fontSize='1rem' lineHeight='normal' pb='4px'>
+                                                    <Heading fontFamily='Helvetica' fontSize='1rem' lineHeight='normal' fontWeight='700' pb='4px'>
                                                         {store?.store_name}
                                                     </Heading>
 
@@ -248,9 +248,13 @@ function LandingHeader() {
             <Heading paddingTop='20px' color='#E2D7FC' textShadow='-4px 5px 14px rgba(255, 255, 255, 0.15)' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal'>
                 Your Impact:
             </Heading>
-            <Text paddingTop='9px' color='#FFF' fontFamily='Helvetica' fontSize='15px' fontWeight='400' lineHeight='normal'>
+            <Text py='9px' color='#FFF' fontFamily='Helvetica' fontSize='15px' fontWeight='400' lineHeight='normal'>
                 “We Believe” has been Lush's mantra since we first opened. Your shopping experience should also reflect that. At Lush, do good by shopping well - see your impact with every purchase below!
             </Text>
+            <Link color='#FFF' fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' textDecoration='underline'
+            href='https://weare.lush.com/lush-life/our-impact-reports/go-circular/' isExternal>
+                Read more <ExternalLinkIcon mx='2px' />
+            </Link>
         </Box>
     )
 }
