@@ -1,0 +1,20 @@
+/* custom-font.css */
+@font-face {
+    font-family: 'LushHandwritten-Bold';
+    src: url('./LushHandwritten-Bold/LushHandwritten-Bold.otf') format('opentype');
+    /*define more font properties like font-weight, font-style, etc. */
+  }
+  
+  /* apply the font to the entire project */
+  html * {
+    font-family: 'LushHandwritten-Bold' , sans-serif !important;
+  }
+  
+  .CheckoutCartSummary {
+    font-family: Helvetica !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 28px !important;
+    letter-spacing: 0.05px !important;
+    text-align: left !important;
+  }

@@ -1,6 +1,7 @@
 @import '../../styles/globals.scss';
 
-.bestSellersImage {
+
+.lushLensImage {
     margin: 0;
     padding: 0;
     width: 350px;
@@ -8,5 +9,4 @@
     box-shadow: -4px 5px 14px 0px rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     object-fit: cover;
-    cursor: pointer;
 }

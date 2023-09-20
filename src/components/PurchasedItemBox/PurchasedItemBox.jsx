@@ -11,7 +11,6 @@ const PurchasedItemBox = () => {
         borderRadius: '10px',
         bg: 'var(--Item-Background, #F3F2F3)',
         boxShadow: '0px 5px 10px 0px rgba(0, 0, 0, 0.25)',
-        // padding: '17px 0 11px 28px',
         position: 'relative',
         alignItems: 'flex-start'
     };
