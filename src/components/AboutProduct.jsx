@@ -100,10 +100,17 @@ function AboutProduct() {
                         </AccordionButton>
                     </h3>
                     <AccordionPanel pb={4} fontSize='12px' fontWeight='400' lineHeight='normal'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        <UnorderedList>
+                            <ListItem pb='16px'>
+                                Saved 0.72lb plastic
+                            </ListItem>
+                            <ListItem pb='16px'>
+                                Saved 0.05lb paper
+                            </ListItem>
+                            <ListItem>
+                                Helped reach our goal of reducing carbon emission by 40%
+                            </ListItem>
+                        </UnorderedList>
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -120,10 +127,11 @@ function AboutProduct() {
                         </AccordionButton>
                     </h3>
                     <AccordionPanel pb={4} fontSize='12px' fontWeight='400' lineHeight='normal'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        <UnorderedList>
+                            <ListItem>
+                                CAD $9.00 to Toronto Women's Shelter
+                            </ListItem>
+                        </UnorderedList>
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
