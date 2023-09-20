@@ -1,0 +1,62 @@
+@import '../../styles/globals.scss';
+
+.purchase-date {
+    color: #000;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+};
+
+.purchase-amount {
+    color: #000;
+    font-family: 'Lato';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    padding-top: 11px;
+};
+
+.purchase-receipt {
+    color: #000;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-family: Helvetica;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    cursor: pointer;
+};
+
+.bathBombThree {
+    position: absolute;
+    top: 8px;
+    left: 73px;
+    height: 71px;
+    width: 71px;
+    z-index: 1;
+}
+
+.bathBombTwo {
+    position: absolute;
+    top: 0;
+    padding: 12px 0 0 12px;
+    height: 64px;
+    width: 64px;
+    z-index: 2;
+}
+
+.bathBombOne {
+    position: relative;
+    height: 98px;
+    width: 98px;
+    z-index: 3;
+    margin-left: 28px;
+    top: 12px;
+}

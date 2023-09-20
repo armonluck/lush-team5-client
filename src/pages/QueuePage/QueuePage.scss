@@ -1,0 +1,28 @@
+@import '../../styles/globals.scss';
+
+.ready-message {
+    color: #FFF;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    padding-right: 5px;
+
+    &__name {
+        color: #8D79D3;
+        font-family: 'Lush Handwritten';
+    }
+}
+
+.queue-number {
+    margin-top: 36px;
+    justify-content: center;
+    align-items: center;
+}
+
+.clockIcon {
+    width: 86px;
+    height: 86px;
+}

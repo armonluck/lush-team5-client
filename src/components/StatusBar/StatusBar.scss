@@ -1,0 +1,36 @@
+@import '../../styles/globals.scss';
+
+.notchIcon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+};
+
+.time {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    top: 14px;
+    left: 27px;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 21px;
+    letter-spacing: -0.32px;
+};
+
+.mobileSignalIcon {
+    width: 18px;
+    height: 12px;
+};
+
+.wifiIcon {
+    width: 17px;
+    height: 11.83px;
+};
+
+.batteryIcon {
+    width: 27.4px;
+    height: 13px;
+    right: 26.6px;
+};
