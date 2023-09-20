@@ -27,7 +27,7 @@ function App() {
     <BrowserRouter>
       <StatusBar />
       <ChakraProvider>
-          {isLoggedIn ? <NavBar isLoggedIn={isLoggedIn} cart={cart} /> : null}
+          {isLoggedIn ? <NavBar isLoggedIn={isLoggedIn} cart={cart}/> : null}
           {isLoggedIn ?
             (<Routes>
               {/* <Route path='/' element='' /> */}
