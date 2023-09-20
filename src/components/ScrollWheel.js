@@ -1,53 +1,36 @@
-import React, { useEffect, useRef } from 'react';
-import { Box, Center, Button } from '@chakra-ui/react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Box, Text, Center } from '@chakra-ui/react';
 
-const ScrollWheel = ({ onChange }) => {
-  const wheelRef = useRef(null);
+const ScrollablePicker = ({ onChange }) => {
+  const scrollRef = useRef(null);
+  const [selected, setSelected] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (wheelRef.current) {
-        const scrollTop = wheelRef.current.scrollTop;
-        const index = Math.floor(scrollTop / 30);
-        onChange(index + 1); 
+      const scrollTop = scrollRef.current.scrollTop;
+      const index = Math.floor((scrollTop + 15) / 30) + 1;
+      setSelected(index);
+      if (onChange) {
+        onChange(index);
       }
     };
 
-    if (wheelRef.current) {
-      wheelRef.current.addEventListener('scroll', handleScroll);
-      wheelRef.current.scrollTop = 0;  
+    if (scrollRef.current) {
+      scrollRef.current.addEventListener('scroll', handleScroll);
     }
 
     return () => {
-      if (wheelRef.current) {
-        wheelRef.current.removeEventListener('scroll', handleScroll);
+      if (scrollRef.current) {
+        scrollRef.current.removeEventListener('scroll', handleScroll);
       }
     };
   }, [onChange]);
 
-  const saveScrollPosition = () => {
-
-  };
-
   return (
     <Center>
-      <Box position="relative" w="90%">
-        <Box
-          ref={wheelRef}
-          overflowY="scroll"
-          h="320px"
-          w="100%"
-          css={{
-            scrollSnapType: 'y mandatory',
-            scrollSnapType: '-webkit-mandatory',
-            scrollSnapType: '-ms-mandatory',
-            '&::-webkit-scrollbar': {
-              display: 'none',
-            },
-            '-ms-overflow-style': 'none',
-            scrollbarWidth: 'none',
-          }}
-        >
+      <Box position="relative" h="200px" w="100%" mt="40px" mb="40px">
+        <Box ref={scrollRef} overflowY="scroll" h="100%" w="100%">
+          <Box h="100px" visibility="hidden"></Box>
           {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
             <Box
               key={num}
@@ -55,41 +38,21 @@ const ScrollWheel = ({ onChange }) => {
               display="flex"
               alignItems="center"
               justifyContent="center"
-              css={{
-                scrollSnapAlign: 'center',
-              }}
+              borderRadius="10px"
+              backgroundColor={selected === num ? 'lightblue' : 'transparent'}
             >
-              {num}
+              <Text fontSize="lg">{num}</Text>
             </Box>
           ))}
+          <Box h="135px" visibility="hidden"></Box>
         </Box>
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          right="0"
-          bottom="0"
-          background="linear-gradient(white 10%, transparent 30%, transparent 70%, white 90%)"
-          pointerEvents="none"
-          zIndex="1"
-        ></Box>
-        <Box
-          position="absolute"
-          left="0%"
-          right="0%"
-          height="30px"
-          top="50%"
-          transform="translateY(-50%)"
-          backgroundColor="lightgray"
-          opacity="30%"
-          borderRadius="10px"
-          zIndex="2"
-          pointerEvents="none"
-        ></Box>
+        {/* Fading effect at the top */}
+        <Box position="absolute" top="0" left="0" right="0" h="70px" background="linear-gradient(to bottom, white, transparent)"></Box>
+        {/* Fading effect at the bottom */}
+        <Box position="absolute" bottom="0" left="0" right="0" h="70px" background="linear-gradient(to top, white, transparent)"></Box>
       </Box>
-      <Button onClick={saveScrollPosition}></Button>
     </Center>
   );
 };
 
-export default ScrollWheel;
+export default ScrollablePicker;

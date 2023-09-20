@@ -27,7 +27,7 @@ const titleStyles = {
 
 // CheckoutProductCard Component
 // Represents a single product card in the checkout process.
-  function CheckoutProductCard({ productId, initialQuantity, price, weight, image, onQuantityChange, totalAmount }) {
+  function CheckoutProductCard({ productId, initialQuantity, price, weight, image, onQuantityChange, totalAmount, name, subtitle}) {
     const [quantity, setQuantity] = useState(initialQuantity);
     const { isOpen, onOpen, onClose } = useDisclosure();
     
@@ -47,8 +47,8 @@ const titleStyles = {
             <Image boxSize="100%" objectFit="cover" src={image} alt="Product" />
           </Box>
           <VStack alignItems="left" spacing="0" ml="76px" mt="-75px">
-            <Text fontFamily="Lush Handwritten" fontSize="18px" fontWeight="700" lineHeight="26px" letterSpacing="0em" textAlign="left">Product Name</Text>
-            <Text fontFamily="Helvetica" fontSize="12px" fontWeight="400" lineHeight="14px" letterSpacing="0.06em" textAlign="left">Product Subtitle</Text>
+            <Text fontFamily="Lush Handwritten" fontSize="18px" fontWeight="700" lineHeight="26px" letterSpacing="0em" textAlign="left">{name}</Text>
+            <Text fontFamily="Helvetica" fontSize="12px" fontWeight="400" lineHeight="14px" letterSpacing="0.06em" textAlign="left">{subtitle}</Text>
           </VStack>
           <Flex mt="60px" ml="0px" alignItems="center" justifyContent="flex-start">
             <Box style={{ marginLeft: '-16.5rem'}}>
@@ -126,11 +126,11 @@ const titleStyles = {
 const App = () => {
     // State to hold the list of products
     const [products, setProducts] = useState([
-        { id: 1, quantity: 1, price: 19, weight: '180g', image: B1, name: 'Product 1', subtitle: 'Subtitle 1' },
-        { id: 2, quantity: 1, price: 33, weight: '240g' },
-        { id: 3, quantity: 1, price: 29, weight: '210g', image: B10, name: 'Product 1', subtitle: 'Subtitle 1'},
-        { id: 1, quantity: 1, price: 15.5, weight: '180g', image: B4, name: 'Product 1', subtitle: 'Subtitle 1' },
-        { id: 1, quantity: 1, price: 8, weight: '180g', image: B9, name: 'Product 1', subtitle: 'Subtitle 1' },
+        { id: 1, quantity: 1, price: 19, weight: '180g', image: B1, name: 'Lord Of Misrule', subtitle: 'Bath Bomb' },
+        { id: 2, quantity: 1, price: 33, weight: '240g', image: B10, name: 'Charity Pot', subtitle: 'Body Lotion'},
+        { id: 3, quantity: 1, price: 29, weight: '210g', image: B10, name: 'Sleepy', subtitle: 'Body Lotion'},
+        { id: 4, quantity: 1, price: 15.5, weight: '180g', image: B4, name: 'Brightside', subtitle: 'Bathbomb' },
+        { id: 5, quantity: 1, price: 8, weight: '180g', image: B9, name: 'Bat Rat', subtitle: 'Bath Bomb' },
       ]);
       
     // Calculate the total number of items in the bag
@@ -147,7 +147,14 @@ const App = () => {
         console.log("Updated Products:", newProducts);  // Debugging line
       };
       
-  
+      useEffect(() => {
+        const ids = products.map(p => p.id);
+        const hasDuplicates = ids.some((id, index) => ids.indexOf(id) !== index);
+        if (hasDuplicates) {
+          console.warn("Duplicate IDs found in products array.");
+        }
+      }, [products]);
+            
     return (
       <VStack spacing={4} w="100%" backgroundColor="#282121" p={0} m={0}>
         <Text fontSize="30px" fontWeight={700} lineHeight="43px" letterSpacing="0em" width="100%" textAlign="center" margin="8px 0" marginLeft="16px" cursor="pointer" color="white">
@@ -163,8 +170,8 @@ const App = () => {
             weight={product.weight}
             price={product.price}
             image={product.image}  
-            productName={product.name}  
-            productSubtitle={product.subtitle} 
+            name={product.name}
+            subtitle={product.subtitle}
             onQuantityChange={handleQuantityChange}
             products={products} 
         />
