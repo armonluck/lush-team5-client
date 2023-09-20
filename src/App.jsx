@@ -9,6 +9,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import QueuePage from './pages/QueuePage/QueuePage';
 import LandingHeader from './components/LandingHeader';
 import AboutProduct from './components/AboutProduct';
+import LoyaltyProgram from './components/LoyaltyProgram';
 import NavBar from './components/NavBar/NavBar'
 import CircleSlider from './components/CircleSlider';
 import CheckoutProductCard from './components/CheckoutProductCard';
@@ -35,6 +36,7 @@ function App() {
               <Route path='/queue' element={<QueuePage />} />
               <Route path='/about-product' element={<AboutProduct />} />
               <Route path='/landing' element={<LandingHeader />} />
+              <Route path='/loyalty' element={<LoyaltyProgram />} />
               {/* TODO: move Box elsewhere, cannot be placed under routes, else results in an error */}
               {/* <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw"> */}
                 <Route path="/CircleSlider" element={<CircleSlider />} />
