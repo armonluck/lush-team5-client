@@ -7,7 +7,7 @@ function LoginPage(){
 
 
     return(
-        <Flex bg= 'black' height='100vh' justifyContent="center" alignItems="center" >
+        <Flex bg= 'black' height='100vh' justifyContent="center" alignItems="center"  >
             <Box>
                 <LoginForm/>    
             </Box>

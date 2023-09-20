@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import StatusBar from './components/StatusBar/StatusBar';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -16,15 +16,29 @@ function App() {
   return (
     <BrowserRouter>
     <StatusBar />
-    <NavBar isLoggedIn={isLoggedIn} cart={cart}/>
       <Routes>
-        <Route path='/' element='' />
-        <Route path='/login' element={<LoginPage setLoggedIn={setLoggedIn}/>} />
-        <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn}/>} />
-        <Route path='/queue' element={<QueuePage />} />
-      </Routes>
+      <Route
+        path='/*'
+        element={
+          isLoggedIn ? (
+            <>
+              <NavBar isLoggedIn={isLoggedIn} cart={cart} />
+              {/* Other routes */}
+              <Route path='/' element=''/>
+              <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
+              <Route path='/queue' element={<QueuePage />} />
+            </>
+          ) : (
+            <Navigate to='/login' replace />
+          )
+        }
+      />
+    <Route path='/login' element={<LoginPage setLoggedIn={setLoggedIn} />} />
+    </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+

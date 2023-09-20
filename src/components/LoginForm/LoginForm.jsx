@@ -34,21 +34,6 @@ const LoginForm = ({}) => {
       }, 5000);
     }, []);
     
-    useEffect(() => {
-      const animateHeading = async () => {
-        // Animate the heading to its final position
-        await controls.start({
-          opacity: 1,
-          y: 0,
-          transition: { duration: 2, delay: 0 },
-        });
-  
-        // After the heading animation is complete, show the form
-      };
-  
-      // Trigger the heading animation
-      animateHeading();
-    }, [controls]);
 
   const handleSubmit = (e)=>{
      e.preventDefault();
@@ -71,11 +56,11 @@ const LoginForm = ({}) => {
         <Flex justifyContent="center" alignItems="center">
 
                        <motion.div
-                       initial={{ opacity: 0, y: 0 }} // Initial state (hidden)
-                       animate={controls} // Visible state
-                      //  transition={{ duration: 6, delay: 1 }} // Transition duration with delay
+                       initial={{ opacity: 0, y: -50 }} // Initial state (hidden)
+                       animate={{ opacity: 1, y: -200 }} // Visible state
+                       transition={{ duration: 6, delay: 1 }} // Transition duration with delay
                    >
-                <Heading as="h1" fontSize="4rem" mb="10rem" fontFamily='Lush Handwritten Compressed' color="white">
+                <Heading as="h1" fontSize="4rem" fontFamily='Lush Handwritten Compressed' color="white">
                   LUSH
                 </Heading>
           </motion.div>
@@ -85,13 +70,13 @@ const LoginForm = ({}) => {
         {formVisible &&
           <motion.div
           initial={{ opacity: 0 }} // Initial state (hidden)
-          animate={{ opacity: 1, scale: 1, height: 'auto' }}  // Visible state
+          animate={{ opacity: 1}}  // Visible state
           transition={{ duration: 5 }} // Transition duration
         >
         <form onSubmit={handleSubmit} ref={formRef}>
-          <Stack spacing="2rem">
+          <Stack spacing="1rem" width='90vw'>
             <FormControl id="username">
-              <Input bg= 'white' type="text" name='username' placeholder="username" />
+              <Input bg= 'white' type="text" name='username' placeholder="username"/>
             </FormControl>
             <FormControl id="password">
               <Input bg= 'white' type="password" name='password' placeholder="password" />
