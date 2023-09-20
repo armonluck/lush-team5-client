@@ -6,6 +6,7 @@ import StatusBar from './components/StatusBar/StatusBar';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import QueuePage from './pages/QueuePage/QueuePage';
+import LandingHeader from './components/LandingHeader';
 import AboutProduct from './components/AboutProduct';
 import NavBar from './components/NavBar/NavBar'
 import CircleSlider from './components/CircleSlider';
@@ -37,10 +38,11 @@ function App() {
                 <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
                 <Route path='/queue' element={<QueuePage />} />
                 <Route path='/about-product' element={<AboutProduct />} />
-                 <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw">
-                <Route path="/CircleSlider" element={<CircleSlider />} /> 
-                <Route path="/CheckoutProduct" element={<CheckoutProductCard />} />
-                <Route path="/RecommendedProducts" element={<RecommendedProducts />} />
+                <Route path='/landing' element={<LandingHeader />} />
+                <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw">
+                  <Route path="/CircleSlider" element={<CircleSlider />} /> 
+                  <Route path="/CheckoutProduct" element={<CheckoutProductCard />} />
+                  <Route path="/RecommendedProducts" element={<RecommendedProducts />} />
                 </Box>
               </>
             ) : (
