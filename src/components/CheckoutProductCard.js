@@ -5,6 +5,7 @@ import QuantityDrawer from './CheckoutQuantityDrawer';
 import B1 from '../assets/bathbombs/Bathbomb_1-transformed.png';
 import B4 from '../assets/bathbombs/Bathbomb_4-transformed.png';
 import B9 from '../assets/bathbombs/Bathbomb_9-transformed.png';
+import B10 from '../assets/bathbombs/Sleepy_Cream.png';
 import CheckoutImpactAccordion from './CheckoutImpactAccordion'; 
 import CheckoutCartSummary from './CheckoutCartSummary';import RecommendedProducts from './RecommendedProducts ';
 import ChevronDownIcon from '../assets/icons/Vector3x.png';
@@ -125,11 +126,11 @@ const titleStyles = {
 const App = () => {
     // State to hold the list of products
     const [products, setProducts] = useState([
-        { id: 1, quantity: 1, price: 10, weight: '180g', image: B1, name: 'Product 1', subtitle: 'Subtitle 1' },
-        { id: 2, quantity: 1, price: 10, weight: '240g' },
-        { id: 3, quantity: 1, price: 10, weight: '210g' },
-        { id: 1, quantity: 1, price: 10, weight: '180g', image: B4, name: 'Product 1', subtitle: 'Subtitle 1' },
-        { id: 1, quantity: 1, price: 10, weight: '180g', image: B9, name: 'Product 1', subtitle: 'Subtitle 1' },
+        { id: 1, quantity: 1, price: 19, weight: '180g', image: B1, name: 'Product 1', subtitle: 'Subtitle 1' },
+        { id: 2, quantity: 1, price: 33, weight: '240g' },
+        { id: 3, quantity: 1, price: 29, weight: '210g', image: B10, name: 'Product 1', subtitle: 'Subtitle 1'},
+        { id: 1, quantity: 1, price: 15.5, weight: '180g', image: B4, name: 'Product 1', subtitle: 'Subtitle 1' },
+        { id: 1, quantity: 1, price: 8, weight: '180g', image: B9, name: 'Product 1', subtitle: 'Subtitle 1' },
       ]);
       
     // Calculate the total number of items in the bag

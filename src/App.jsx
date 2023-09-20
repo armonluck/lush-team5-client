@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider, Box } from '@chakra-ui/react';
@@ -20,18 +20,6 @@ function App() {
             </Box>
       </ChakraProvider>
     </Router>
-=======
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element='' />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+  )}
 
 export default App;
