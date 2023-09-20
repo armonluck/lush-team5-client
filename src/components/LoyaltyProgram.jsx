@@ -20,7 +20,7 @@ import '../styles/_fonts.scss';
 function LoyaltyProgram() {
     return (
         <Box p='20px' bg='#282121'>
-                        <Heading as='h2' color='#E2D7FC' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal' pb='12px'>
+            <Heading as='h2' color='#E2D7FC' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal' pb='12px'>
                 Loyalty Program
             </Heading>
             <Flex flexDir='column' justify='center' align='center'>
@@ -52,43 +52,53 @@ function LoyaltyProgram() {
                 </Text>
             </Flex>
 
-            <Card
-                direction='row'
-                overflow='hidden'
-                variant='unstyled'
-                borderRadius='0'
-                mb='20px'
-                bg='#645C5C'
-                color='#FFF'
-            >
-                <Image
-                    objectFit='cover'
-                    bg='#D9D9D9'
-                    w='115px'
-                    h='115px'
-                    mr='1rem'
-                    src=''
-                    alt='Image of a store front'
-                />
+            <Box marginTop='-160px' padding='134px 20px 24px 20px' bg='#645C5C' borderRadius='20px' boxShadow='-4px 5px 14px 0px rgba(0, 0, 0, 0.15)'>
+                <Text color='#B9A6F0' fontFamily='LushHandwritten-Bold' fontSize='18px' fontWeight='700' lineHeight='normal' textShadow='-4px 5px 14px rgba(255, 255, 255, 0.15);'>
+                    This Week Only:
+                </Text>
+                <Card
+                    marginTop='17px'
+                    direction='row'
+                    overflow='hidden'
+                    variant='unstyled'
+                    borderRadius='0'
+                    mb='20px'
+                    bg='#645C5C'
+                    color='#FFF'
+                >
+                    <Image
+                        objectFit='cover'
+                        w='60px'
+                        h='60px'
+                        mr='14px'
+                        src={images.MisruleBathBomb}
+                        alt='Lord of Misrule Bath Bomb from LUSH. Green and spherical with purple highlights throughout the bath bomb.'
+                    />
 
-                <Stack>
-                    <CardBody>
-                        <Heading fontFamily='Helvetica' fontSize='1rem' lineHeight='normal' fontWeight='700' pb='4px'>
-                        </Heading>
+                    <Stack>
+                        <CardBody color='#FFF'>
+                            <Heading fontFamily='LushHandwritten-Bold' fontSize='18px' lineHeight='normal' pb='4px'>
+                                Lord of Misrule
+                            </Heading>
 
-                        <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' pb='24px'>
-                        </Text>
+                            <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal'>
+                                50% of sale goes to Toronto Women's Shelter
+                            </Text>
+                            <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal'>
+                                <Highlight
+                                    query='Lush Points'
+                                    styles={{ fontSize: '15px', lineHeight: 'normal', fontFamily: 'LushHandwritten-Bold', color: '#FFF' }}
+                                >
+                                    2x the Lush Points
+                                </Highlight>
+                            </Text>
+                        </CardBody>
 
-                        <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' >
-                        </Text>
-
-                        <Text fontFamily='Helvetica' fontSize='12px' fontWeight='400' lineHeight='normal' m='0'>
-                        </Text>
-                    </CardBody>
-                    <CardFooter>
-                    </CardFooter>
-                </Stack>
-            </Card>
+                        <CardFooter>
+                        </CardFooter>
+                    </Stack>
+                </Card>
+            </Box>
         </Box>
     )
 }
