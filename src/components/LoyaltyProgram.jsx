@@ -98,6 +98,15 @@ function LoyaltyProgram() {
                         </CardFooter>
                     </Stack>
                 </Card>
+
+                <Flex justifyContent='space-between'>
+                    <Button variant='unstyled' fontFamily='Helvetica' fontSize='12px' textDecoration='underline' fontWeight='400' color='#FFF' lineHeight='normal'>
+                        Past History
+                    </Button>
+                    <Button variant='solid' borderRadius='5px' bg='#6252A4' boxShadow='-4px 5px 14px 0px rgba(0, 0, 0, 0.15)' color='#FFF' fontFamily='Helvetica' fontSize='15px' fontWeight='700' lineHeight='normal' padding='12px 10px'>
+                        View Rewards
+                    </Button>
+                </Flex>
             </Box>
         </Box>
     )
