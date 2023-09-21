@@ -7,7 +7,7 @@ import LushLens from '../../components/LushLens/LushLens';
 
 const ProfilePage = () => {
     return (
-        <Box height='100vh' background='var(--neutral-900, #282121)' pt='40px'>
+        <Box height='650px' background='var(--neutral-900, #282121)' pt='40px'>
             <Flex justifyContent='center'>
                 <VStack spacing='12px'>
                     {/* <LushLens /> */}

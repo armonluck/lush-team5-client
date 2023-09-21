@@ -6,6 +6,9 @@ import OverlappingCircles from './OverlappingCircles';
 import B1 from "../assets/bathbombs/Bathbomb_1-transformed.png";
 import B4 from "../assets/bathbombs/Bathbomb_4-transformed.png";
 import B5 from "../assets/bathbombs/Bathbomb_5-transformed.png";
+import './CircleSlider.scss';
+
+
 export const circleData = [
   {
     heading: 'Sustainability',
@@ -130,8 +133,7 @@ const CircleSlider = () => {
   }, []);
   return (
     <Flex  direction="column" align="center" h="50vh" overflowX="" overflowY="hidden">
-      <Flex ref={scrollRef} direction="row" overflow="auto" overflowY="hidden" w="100%" py={4} mt="20px" ml="2px">
-        {/* Render OverlappingCircles components */}
+        <Flex ref={scrollRef} className="custom-scrollbar" direction="row" overflow="auto" overflowY="hidden" w="100%" py={4} mt="20px" ml="2px">     
         {circleData.map((group, groupIndex) => (
           <Box key={`group${groupIndex}`} w="100%" mb="2rem" pb="4rem" h="100vh" pt="25rem" mx={40}>
             <OverlappingCircles
