@@ -8,7 +8,7 @@ const ProfilePage = () => {
     return (
         <Box height='100vh' background= 'var(--neutral-900, #282121)' pt='40px'>
             <Flex justifyContent='center'>
-                <VStack spacing='12px' px='20px'>
+                <VStack spacing='12px'>
                     <LushLens />
                     <BuyAgain />
                     <BestSellers />

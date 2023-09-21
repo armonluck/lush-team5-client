@@ -67,7 +67,7 @@ const LoginForm = ({ setLoggedIn }) => {
         <motion.div
           initial={{ opacity: 0 }} // Initial state (hidden)
           animate={{ opacity: 1 }}  // Visible state
-          transition={{ duration: 2 }} // Transition duration
+          transition={{ duration: 3 }} // Transition duration
           padding='0'
           bg='#282121'
 
