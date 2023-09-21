@@ -13,6 +13,7 @@ import CheckoutCartSummary from './CheckoutCartSummary';
 import RecommendedProducts from './RecommendedProducts';
 import ChevronDownIcon from '../assets/icons/Vector3x.png';
 import StickyCheckoutButton from './StickyCheckoutButton';
+import ScrollablePicker from './ScrollWheel';
 
 // Title Styles
 const titleStyles = {
@@ -233,6 +234,7 @@ const App = () => {
         flexDirection="column"
         justifyContent="flex-end"
         alignItems="center"
+        marginBottom='150px'
       >
         <StickyCheckoutButton products={products} p="0" m="0" />
       </Box>

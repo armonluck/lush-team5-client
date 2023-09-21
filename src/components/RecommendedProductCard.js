@@ -54,8 +54,8 @@ const ProductCard = ({ name, item, image, description, rating }) => {
       </Flex>
       <Flex flexDirection="column" alignItems="center" mb={2} mt={4}>
         <Text className="productItemText">{item}</Text>
-        <Text className="productTitle">{name}</Text>
-        <Text className="productDescription">{description}</Text>
+        <Text color='#000' className="productTitle">{name}</Text>
+        <Text color='#000' className="productDescription">{description}</Text>
       </Flex>
     </Box>
   );
