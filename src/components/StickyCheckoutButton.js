@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import ApplyPayCard from '../assets/bathbombs/Apple Pay.png';
-
+import { useNavigate } from 'react-router-dom';
 const containerStyles = {
   zIndex: '10',
   width: '100%',
@@ -23,7 +23,6 @@ const containerStyles = {
   justifyContent: 'center',
   alignItems: 'center',
 };
-
 const whiteBlockStyles = {
   width: '100%',
   padding: '8px 16px',
@@ -33,7 +32,6 @@ const whiteBlockStyles = {
   flexDirection: 'column',
   alignItems: 'center',
 };
-
 const boxStyles = {
   width: '350px',
   height: 'auto',
@@ -46,7 +44,6 @@ const boxStyles = {
   letterSpacing: '0.05px',
   paddingBottom: '8px'
 };
-
 const buttonStyles = {
   width: '363px',
   height: 'auto',
@@ -62,28 +59,30 @@ const buttonStyles = {
   letterSpacing: '0.05px',
   marginBottom: '8px',
 };
-
 const imageStyles = {
   maxWidth: '100%',
   maxHeight: '100%',
 };
-
 const StickyCheckoutButton = ({ products }) => {
   // Calculate the subtotal amount for all products
   const subtotal = products.reduce((acc, product) => acc + product.price * product.quantity, 0);
-
   // Calculate the sales tax (Assuming a 13% tax rate)
   const salesTax = subtotal ? subtotal * 0.13 : 0;
-
   // Calculate the total amount including tax
   const totalAmount = subtotal + salesTax;
-
   // Format the total amount to 2 decimal places
   const formattedTotalAmount = totalAmount !== undefined ? totalAmount.toFixed(2) : '0.00';
-
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
+  const navigate = useNavigate();
+  
+  const handleDrawerOpen = () => {
+    onOpen();
+    // timeout to navigate to the route after 3 seconds
+    setTimeout(() => {
+      navigate('/queue');
+    }, 3000);
+  };
   return (
     <div style={containerStyles}>
       <div style={whiteBlockStyles}>
@@ -92,13 +91,11 @@ const StickyCheckoutButton = ({ products }) => {
           <span className="CheckoutCartSummary">Total:</span>
           <span className="CheckoutCartSummary"> CAD ${formattedTotalAmount}</span>
         </div>
-
         {/* Render the sticky checkout button */}
-        <Button style={buttonStyles} ref={btnRef} colorScheme='teal' onClick={onOpen}>
+        <Button style={buttonStyles} ref={btnRef} colorScheme='teal' onClick={handleDrawerOpen}>
           <img src={ApplePayButton} alt="Apple Pay" style={imageStyles} />
         </Button>
       </div>
-
       <Drawer isOpen={isOpen} placement='bottom' onClose={onClose} finalFocusRef={btnRef}>
         <DrawerOverlay />
         <DrawerContent>
@@ -120,5 +117,4 @@ const StickyCheckoutButton = ({ products }) => {
     </div>
   );
 };
-
 export default StickyCheckoutButton;

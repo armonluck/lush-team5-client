@@ -216,8 +216,8 @@ const App = () => {
 
       {/* Recommended Products */}
       <Box d='flex' alignContent='left' justifyContent='flex-start'>
-        <Text color='#FFF' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal' my='20px' textAlign='left'>
-          Your Impact
+        <Text color='#FFF' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal' my='20px' position='relative' left='-66px'>
+          You Might Also like
         </Text>
       </Box>
       <Box w="100%" mb="4rem" bg="#F3F2F3" borderRadius="10px">
