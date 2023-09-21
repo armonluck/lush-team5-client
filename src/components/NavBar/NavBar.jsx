@@ -40,14 +40,15 @@ function NavBar({isLoggedIn, cart}){
         setSearchPopup(false)
     }
 
-  // Event listener for detecting clicks outside the search icon
-  const handleClickOutside = (event) => {
+// Event listener for detecting clicks outside the search icon
+const handleClickOutside = (event) => {
     if (
       searchVisible && // Check if the search component is visible
       !searchIconRef.current.contains(event.target) && // Exclude clicks on the search icon
       event.target.tagName.toLowerCase() !== 'input' // Exclude clicks on input elements
     ) {
       setSearchVisible(false);
+      setSelectIcon(''); // Clear the selected icon when closing the search
     }
   };
   
@@ -93,7 +94,7 @@ function NavBar({isLoggedIn, cart}){
                 <Box paddingBottom='0rem' width='100vw' padding='0.5rem'>
                     <Flex flexDirection='row' justifyContent="space-between" alignItems='center'>
                         <Box padding='1rem'>
-                            <Link to="/landing" onClick={()=>setSelectIcon('home')}>
+                            <Link to={isLoggedIn?"/landing":'/login'} onClick={()=>setSelectIcon('home')}>
                                 <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>
@@ -101,12 +102,12 @@ function NavBar({isLoggedIn, cart}){
                             <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":'none'}/>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to="/about-product" onClick={()=>setSelectIcon('camera')}>
+                            <Link to={isLoggedIn?"/about-product":'/login'} onClick={()=>setSelectIcon('camera')}>
                                 <CameraIcon height='3vh' width='auto'  fill={selectedIcon==='camera'?"rgb(180, 157, 253)":'white'} sx={setStroke}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to='/CheckoutProduct' onClick={()=>setSelectIcon('cart')}>
+                            <Link to={isLoggedIn?'/CheckoutProduct':'/login'} onClick={()=>setSelectIcon('cart')}>
                                 <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} sx={setStroke}/>
                             </Link>
                         </Box>
