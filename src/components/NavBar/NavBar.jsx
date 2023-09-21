@@ -90,7 +90,7 @@ const handleClickOutside = (event) => {
             </Box>
             :null
             }
-            <Flex flexDirection='column' alignItems='center' bg='#282121'>
+            <Flex flexDirection='column' alignItems='center' bg='#3D3838'>
                 <Box paddingBottom='0rem' width='100vw' padding='0.5rem'>
                     <Flex flexDirection='row' justifyContent="space-between" alignItems='center'>
                         <Box padding='1rem'>

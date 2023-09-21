@@ -13,6 +13,8 @@ import CheckoutCartSummary from './CheckoutCartSummary';
 import RecommendedProducts from './RecommendedProducts';
 import ChevronDownIcon from '../assets/icons/Vector3x.png';
 import StickyCheckoutButton from './StickyCheckoutButton';
+import QueuePage from '../pages/QueuePage/QueuePage';
+import PurchasedItemBox from './PurchasedItemBox/PurchasedItemBox';
 import ScrollablePicker from './ScrollWheel';
 
 // Title Styles
@@ -237,6 +239,10 @@ const App = () => {
         marginBottom='150px'
       >
         <StickyCheckoutButton products={products} p="0" m="0" />
+      </Box>
+      <Box display='none'>
+        <QueuePage products={products} />
+        <PurchasedItemBox products={products} />
       </Box>
     </VStack>
   );
