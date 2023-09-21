@@ -113,7 +113,7 @@ const handleClickOutside = (event) => {
                         </Box>
                         <Box padding='1rem'>
                             <Link to={isLoggedIn?'/checkout':'/login'} onClick={()=>setSelectIcon('cart')}>
-                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} sx={setStroke}/>
+                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'none'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'white'} sx={setStroke}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
