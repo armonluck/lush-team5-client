@@ -13,7 +13,7 @@ import LoyaltyProgram from './components/LoyaltyProgram';
 import NavBar from './components/NavBar/NavBar'
 import CircleSlider from './components/CircleSlider';
 import CheckoutProductCard from './components/CheckoutProductCard';
-import RecommendedProducts from './components/RecommendedProducts ';
+import RecommendedProducts from './components/RecommendedProducts';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import './chakra-ui-theme/lush-font.css';
 import './styles/_globals.scss';

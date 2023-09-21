@@ -18,3 +18,82 @@
     letter-spacing: 0.05px !important;
     text-align: left !important;
   }
+
+
+    .product-cost {
+        font-family: "Helvetica Neue" !important;
+        font-weight: bold;
+        font-size: 15px !important;
+        line-height: 45px !important;
+        letter-spacing: 0.04em !important;
+        color: #000000;
+        ;
+    }
+
+    .product-weight {
+        font-family: "Helvetica Neue" !important;
+        font-weight: bold;
+        font-size: 15px !important;
+        line-height: 45px !important;
+        letter-spacing: 0.04em !important;
+        color: #000000;
+        ;
+    }
+    
+    .select-quantity-number {
+        font-family: Helvetica !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        line-height: 14px !important;
+        letter-spacing: 0.06em !important;
+        text-align: left !important;
+    }
+
+/* accordionStyles.css */
+
+/* Styles for titles */
+.titleStyles {
+    width: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 43px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 8px 0;
+    margin-left: 16px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Styles for accordion container */
+  .accordionContainerStyles {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  /* Styles for accordion titles */
+  .accordionTitleStyles {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 16px;
+    cursor: pointer;
+    font-family: Helvetica;
+    color: black;
+  }
+  
+.listItemStyles {
+    font-family: 'Helvetica' !important;
+    font-weight: 400 !important;
+    line-height: 14px !important;
+    letter-spacing: 0.06em !important;
+    text-align: left !important;
+    margin-left: 1rem;
+}
+
