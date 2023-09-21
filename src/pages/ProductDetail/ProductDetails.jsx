@@ -10,6 +10,9 @@ function ProductDetails() {
     <Box bg='#282121' paddingBottom='20px'>
       <ProductScan />
       <AboutProduct />
+      <Text>
+        Similar Products
+      </Text>
       <Box mx='20px' mb="4rem" bg="#F3F2F3" borderRadius="10px">
         <RecommendedProducts2 />
       </Box>

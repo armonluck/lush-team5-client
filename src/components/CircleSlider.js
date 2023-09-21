@@ -4,6 +4,12 @@ import { Box, Flex, Spacer, IconButton } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import OverlappingCircles from './OverlappingCircles';
 
+const circleHeading = [
+  {heading1: "Sustainability"}, 
+  {heading2: "Social Change"},
+  {heading3: "Campaigning"}
+];
+
 // CircleSlider Component
 // This component represents a slider for displaying overlapping circles.
 const CircleSlider = () => {
