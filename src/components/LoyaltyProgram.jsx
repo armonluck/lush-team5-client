@@ -19,7 +19,7 @@ import '../styles/_fonts.scss';
 
 function LoyaltyProgram() {
     return (
-        <Box p='20px' bg='#282121'>
+        <Box px='20px' bg='#282121'>
             <Heading as='h2' color='#E2D7FC' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal' pb='12px'>
                 Loyalty Program
             </Heading>

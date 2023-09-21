@@ -38,10 +38,10 @@ const ProductScan = () => {
     console.log("added to cart");
   };
   return (
-    <Box className={isShrunk ? "shrinked" : ""}>
-      <Box maxW="md" p="0" borderWidth="1px" borderRadius="lg" bg="#2A2323">
+    <Box width='100%' className={isShrunk ? "shrinked" : ""}>
+      <Box maxW="md" p="0" bg="#2A2323">
         <Flex
-          // opacity={isShrunk ? "0" : ""}
+          opacity={isShrunk ? "0" : ""}
           align="center"
           padding="5"
         >
@@ -63,11 +63,11 @@ const ProductScan = () => {
           mb="16px"
           className='product__product-card'
           borderRadius="lg"
-          height='auto'
+          height='600px'
         >
           <Flex justify="center" align="center" mb='46px' mt='11px' mr='10px' ml='19px'>
             <Image
-              height={isShrunk ? 200 : ""}
+              height={isShrunk ? 120 : ""}
               src={BathBomb}
               alt="bathbomb placeholder"
             />

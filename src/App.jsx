@@ -7,13 +7,11 @@ import StatusBar from './components/StatusBar/StatusBar';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import QueuePage from './pages/QueuePage/QueuePage';
-import LandingHeader from './components/LandingHeader';
-import AboutProduct from './components/AboutProduct';
-import LoyaltyProgram from './components/LoyaltyProgram';
 import NavBar from './components/NavBar/NavBar'
 import CircleSlider from './components/CircleSlider';
 import CheckoutProductCard from './components/CheckoutProductCard';
-import RecommendedProducts from './components/RecommendedProducts ';
+import RecommendedProducts from './components/RecommendedProducts';
+import HomePage from './pages/HomePage';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import './chakra-ui-theme/lush-font.css';
 import './styles/_globals.scss';
@@ -33,10 +31,9 @@ function App() {
             (<Routes>
               {/* <Route path='/' element='' /> */}
               <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
+              <Route path='/home' element={<HomePage />} />
+              <Route path='/product' element={<ProductDetails/>} />
               <Route path='/queue' element={<QueuePage />} />
-              <Route path='/about-product' element={<AboutProduct />} />
-              <Route path='/landing' element={<LandingHeader />} />
-              <Route path='/loyalty' element={<LoyaltyProgram />} />
               {/* TODO: move Box elsewhere, cannot be placed under routes, else results in an error */}
               {/* <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw"> */}
                 <Route path="/CircleSlider" element={<CircleSlider />} />

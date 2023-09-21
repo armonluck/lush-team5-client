@@ -17,7 +17,7 @@ import '../styles/_fonts.scss';
 
 function AboutProduct() {
     return (
-        <Box p='20px' bg='#282121' paddingBottom='20px'>
+        <Box p='20px' bg='#282121' paddingBottom='20px' paddingTop='700px'>
             <Heading as='h2' color='#FFF' fontFamily='LushHandwritten-Bold' fontSize='18px' fontWeight='700' lineHeight='normal' mb='20px'>
                 About The Product
             </Heading>
