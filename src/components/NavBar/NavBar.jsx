@@ -94,7 +94,7 @@ const handleClickOutside = (event) => {
                 <Box paddingBottom='0rem' width='100vw' padding='0.5rem'>
                     <Flex flexDirection='row' justifyContent="space-between" alignItems='center'>
                         <Box padding='1rem'>
-                            <Link to={isLoggedIn?"/landing":'/login'} onClick={()=>setSelectIcon('home')}>
+                            <Link to={isLoggedIn?"/home":'/login'} onClick={()=>setSelectIcon('home')}>
                                 <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>

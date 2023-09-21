@@ -37,7 +37,7 @@ const LoginForm = ({ setLoggedIn }) => {
     // Use another timeout to make the form visible after 1 second
     setTimeout(() => {
       setFormVisible(true);
-    }, 8000);
+    }, 3000);
   }, []);
 
 
@@ -56,9 +56,9 @@ const LoginForm = ({ setLoggedIn }) => {
         <motion.div
           initial={{ opacity: 0, y: -50 }} // Initial state (hidden)
           animate={{ opacity: 1, y: -200 }} // Visible state
-          transition={{ duration: 5, delay: 1 }} // Transition duration with delay
+          transition={{ duration: 3, delay: 1 }} // Transition duration with delay
         >
-          <Heading as="h1" fontSize="4rem" fontFamily='Lush Handwritten Compressed' color="white" marginTop='68px'>
+          <Heading as="h1" fontSize="4rem" fontFamily='Lush Handwritten Compressed' color="white" marginTop='68px' marginBottom='-20px'>
             LUSH
           </Heading>
         </motion.div>
@@ -67,12 +67,13 @@ const LoginForm = ({ setLoggedIn }) => {
         <motion.div
           initial={{ opacity: 0 }} // Initial state (hidden)
           animate={{ opacity: 1 }}  // Visible state
-          transition={{ duration: 5 }} // Transition duration
+          transition={{ duration: 2 }} // Transition duration
           padding='0'
+          bg='#282121'
 
         >
           <form onSubmit={(e) => { handleSubmit(e) }} ref={formRef}>
-            <Stack spacing="1rem" width='90vw' mx='20px' fontFamily='Helvetica'>
+            <Stack spacing="1rem" width='90vw' mx='40px' fontFamily='Helvetica' >
               <FormControl id="username" paddingBottom='48px'>
                 <Input bg='white' borderRadius='5px' fontSize='20px'
                 type="text" name='username' placeholder="username" autoComplete="username" />
@@ -84,7 +85,7 @@ const LoginForm = ({ setLoggedIn }) => {
               <Link style={{ color: 'white', fontSize: '16px', opacity: '0.7' }} to='/'>Forgot Password?</Link>
             </Stack>
             <Flex mt='4rem' justifyContent="flex-end" alignItems="flex-end">
-              <Button type="submit" sx={buttonStyle} marginRight='20px' marginBottom='168px'>
+              <Button type="submit" sx={buttonStyle} marginRight='40px' marginBottom='168px'>
                 SIGN-IN
               </Button>
             </Flex>
