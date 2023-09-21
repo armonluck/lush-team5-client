@@ -41,7 +41,7 @@ function NavBar({isLoggedIn, cart}){
     }
 
     const handleSubmit = (e)=>{
-        navigate('/about-product')
+        navigate('/product')
         setSearchPopup(false)
     }
 
@@ -95,12 +95,12 @@ const handleClickOutside = (event) => {
             </Box>
             :null
             }
-            <Flex flexDirection='column' alignItems='center' bg='#282121'>
+            <Flex flexDirection='column' alignItems='center' bg='#3D3838'>
                 <Box paddingBottom='0rem' width='100vw' padding='0.5rem'>
                     <Flex flexDirection='row' justifyContent="space-between" alignItems='center'>
                         <Box padding='1rem'>
-                            <Link to={isLoggedIn?"/landing":'/login'} onClick={()=>setSelectIcon('home')}>
-                                <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'none'}/>
+                            <Link to={isLoggedIn?"/home":'/login'} onClick={()=>setSelectIcon('home')}>
+                                <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
@@ -112,12 +112,12 @@ const handleClickOutside = (event) => {
                             </Link>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to={isLoggedIn?'/CheckoutProduct':'/login'} onClick={()=>setSelectIcon('cart')}>
-                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'none'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'white'} />
+                            <Link to={isLoggedIn?'/checkout':'/login'} onClick={()=>setSelectIcon('cart')}>
+                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} sx={setStroke}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to={isLoggedIn?'/profile':'/login'} onClick={()=>setSelectIcon('account')}>
+                            <Link to={isLoggedIn?'/home':'/login'} onClick={()=>setSelectIcon('account')}>
                                 <AccountIcon height='3vh' width='auto'  fill={selectedIcon==='account'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>

@@ -37,7 +37,7 @@ function LandingHeader() {
     const btnRef = React.useRef()
 
     //API url & key
-    const local_api = "http://localhost:7272";
+    const local_api = "http://localhost:7373";
 
     //State variables for video details and current/selected video
     const [stores, setStores] = useState([]);

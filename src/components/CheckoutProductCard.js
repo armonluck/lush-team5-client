@@ -1,6 +1,6 @@
 // Importing required modules and components
 import React, { useState, useEffect } from 'react';
-import { Box, Text, Image, Button, VStack, Flex, useDisclosure } from '@chakra-ui/react';
+import { Box, Text, Image, Button, VStack, Flex, useDisclosure, Heading } from '@chakra-ui/react';
 import DeleteIcon from '../assets/icons/mdi_trash-can-outline.png';
 import QuantityDrawer from './CheckoutQuantityDrawer';
 import B1 from '../assets/bathbombs/Bathbomb_1-transformed.png';
@@ -13,6 +13,9 @@ import CheckoutCartSummary from './CheckoutCartSummary';
 import RecommendedProducts from './RecommendedProducts';
 import ChevronDownIcon from '../assets/icons/Vector3x.png';
 import StickyCheckoutButton from './StickyCheckoutButton';
+import QueuePage from '../pages/QueuePage/QueuePage';
+import PurchasedItemBox from './PurchasedItemBox/PurchasedItemBox';
+import ScrollablePicker from './ScrollWheel';
 
 // Title Styles
 const titleStyles = {
@@ -184,8 +187,8 @@ const App = () => {
   }, [products]);
 
   return (
-    <VStack spacing={4} w="100%" backgroundColor="#282121" p={0} m={0}>
-      <Text fontSize="30px" fontWeight={700} lineHeight="43px" letterSpacing="0em" width="100%" textAlign="center" margin="8px 0" marginLeft="16px" cursor="pointer" color="white">
+    <VStack spacing={4} w="100%" backgroundColor="#282121" p={0} m={0} px='20px'>
+      <Text fontSize="30px" fontWeight={700} lineHeight="43px" letterSpacing="0em" width="100%" fontFamily='LushHandwritten-Bold' textAlign='center' margin="8px 0" marginLeft="16px" cursor="pointer" color="white">
         My Bag ({totalItemsInBag} {totalItemsInBag === 1 ? 'item' : 'items'})
       </Text>
 
@@ -214,9 +217,11 @@ const App = () => {
       </Box>
 
       {/* Recommended Products */}
-      <Text style={titleStyles}>
-        You Might Also Like
-      </Text>
+      <Box d='flex' alignContent='left' justifyContent='flex-start'>
+        <Text color='#FFF' fontFamily='LushHandwritten-Bold' fontSize='30px' fontWeight='700' lineHeight='normal' my='20px' position='relative' left='-66px'>
+          You Might Also like
+        </Text>
+      </Box>
       <Box w="100%" mb="4rem" bg="#F3F2F3" borderRadius="10px">
         <RecommendedProducts />
       </Box>
@@ -231,8 +236,13 @@ const App = () => {
         flexDirection="column"
         justifyContent="flex-end"
         alignItems="center"
+        marginBottom='150px'
       >
         <StickyCheckoutButton products={products} p="0" m="0" />
+      </Box>
+      <Box display='none'>
+        <QueuePage products={products} />
+        <PurchasedItemBox products={products} />
       </Box>
     </VStack>
   );
