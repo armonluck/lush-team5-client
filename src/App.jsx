@@ -1,21 +1,19 @@
 
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css';
 import ProductDetails from './pages/ProductDetail/ProductDetails';
 import StatusBar from './components/StatusBar/StatusBar';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import QueuePage from './pages/QueuePage/QueuePage';
 import NavBar from './components/NavBar/NavBar'
-import CircleSlider from './components/CircleSlider';
 import CheckoutProductCard from './components/CheckoutProductCard';
-import RecommendedProducts from './components/RecommendedProducts';
 import HomePage from './pages/HomePage';
 import { ChakraProvider } from '@chakra-ui/react';
 import './chakra-ui-theme/lush-font.css';
 import './styles/_globals.scss';
-import { useState } from 'react'
+import { useState } from 'react';
+import './App.css';
 
 
 function App() {
@@ -35,7 +33,6 @@ function App() {
             <Route path='/product' element={<ProductDetails />} />
             <Route path='/queue' element={<QueuePage />} />
             <Route path="/checkout" element={<CheckoutProductCard />} />
-            <Route path="/RecommendedProducts" element={<RecommendedProducts />} />
           </Routes>)
           :
           (
