@@ -36,7 +36,7 @@ function NavBar({isLoggedIn, cart}){
     }
 
     const handleSubmit = (e)=>{
-        navigate('/about-product')
+        navigate('/product')
         setSearchPopup(false)
     }
 
