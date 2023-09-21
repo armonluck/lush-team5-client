@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Flex, Box, VStack } from '@chakra-ui/react';
-import B6 from '../assets/bathbombs/Bathbomb_6-transformed.png';
-import B7 from '../assets/bathbombs/Bathbomb_7-transformed.png';
-import B8 from '../assets/bathbombs/Bathbomb_8-transformed.png';
+import B3 from '../assets/bathbombs/Bathbomb_3-transformed.png';
+import B5 from '../assets/bathbombs/Bathbomb_5-transformed.png';
+import B4 from '../assets/bathbombs/Bathbomb_4-transformed.png';
 import ProductCard from './RecommendedProductCard';
 
-const RecommendedProducts = () => {
+const RecommendedProducts2 = () => {
   useEffect(() => {
     // Get a reference to the container element
     const container = document.getElementById('product-container');
@@ -19,12 +19,12 @@ const RecommendedProducts = () => {
   }, []);
   // product data
   const products = [
-    { name: 'Lakes', item: 'Bathbomb', image: B7, description: 'Warm and Romantic', rating: 4.5 },
-    { name: 'UFO', item: 'Bathbomb', image: B8, description: 'Neon lemondate soak', rating: 3.5 },
-    { name: 'Magic Potion', item: 'Bathbomb', image: B6, description: 'Spellbinding Dragon Fruit Fizz', rating: 4 },
+    { name: 'Twilight', item: 'Bathbomb', image: B3, description: 'Dreamy lavender froth', rating: 4 },
+    { name: 'Intergalatic', item: 'Bathbomb', image: B5, description: 'Cosmic mint bathing', rating: 4.5 },
+    { name: 'Brightside', item: 'Bathbomb', image: B4, description: 'Sunny, citrusy bubbles', rating: 5 },
   ];
   return (
-    <VStack spacing={8} alignItems="center">
+    <VStack spacing={8} alignItems="center" p='10px'>
       {/* Container for the product cards */}
       <Box
         id="product-container"
@@ -53,4 +53,4 @@ const RecommendedProducts = () => {
     </VStack>
   );
 };
-export default RecommendedProducts;
+export default RecommendedProducts2;

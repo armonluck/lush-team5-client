@@ -7,7 +7,7 @@ import { Box } from '@chakra-ui/react';
 
 function HomePage() {
   return (
-    <Box bg='#282121' paddingBottom='100px'>
+    <Box bg='#282121' paddingBottom='150px'>
         <LandingHeader />
         <CircleSlider />
         <ProfilePage />

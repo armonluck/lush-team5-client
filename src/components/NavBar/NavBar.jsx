@@ -101,7 +101,7 @@ function NavBar({isLoggedIn, cart}){
                             <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":'none'}/>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to="/about-product" onClick={()=>setSelectIcon('camera')}>
+                            <Link to="/product" onClick={()=>setSelectIcon('camera')}>
                                 <CameraIcon height='3vh' width='auto'  fill={selectedIcon==='camera'?"rgb(180, 157, 253)":'white'} sx={setStroke}/>
                             </Link>
                         </Box>
