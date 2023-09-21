@@ -107,7 +107,7 @@ const handleClickOutside = (event) => {
                             <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":"white"} sx={setStroke}/>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to={isLoggedIn?"/about-product":'/login'} onClick={()=>setSelectIcon('camera')}>
+                            <Link to={isLoggedIn?"/product":'/login'} onClick={()=>setSelectIcon('camera')}>
                                 <CameraIcon height='3vh' width='auto'  fill={selectedIcon==='camera'?"rgb(180, 157, 253)":'white'} sx={setStroke}/>
                             </Link>
                         </Box>

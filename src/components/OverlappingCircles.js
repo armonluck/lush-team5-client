@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Tooltip, Text, Flex, VStack, Image } from '@chakra-ui/react';
+import { Box, Tooltip, Text, Flex, VStack, Image, Heading } from '@chakra-ui/react';
 import B1 from "../assets/bathbombs/Bathbomb_1-transformed.png";
-
+import B4 from "../assets/bathbombs/Bathbomb_4-transformed.png";
+import B5 from "../assets/bathbombs/Bathbomb_5-transformed.png";
 
 // Circle Component
 // This component represents an individual circle with a label and sub-label.
@@ -99,7 +100,6 @@ const Circle = ({ size, label, subLabel, left, top, zIndex, imageUrl, isActive }
         w={size}
         h={size}
         borderRadius="full"
-        bg="white"
         position="absolute"
         left={left}
         top={top}
@@ -107,10 +107,11 @@ const Circle = ({ size, label, subLabel, left, top, zIndex, imageUrl, isActive }
         display="flex"
         alignItems="center"
         justifyContent="center"
-        boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
         _hover={{ transform: 'scale(1.05)' }}
         transition="transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out"
       >
+        <Heading>
+        </Heading>
         <Image
           src={imageUrl}
           alt={label}
@@ -148,7 +149,9 @@ const OverlappingCircles = ({ isActive }) => {
         alignItems="center"
         justifyContent="center"
         position="relative"
+        color='#FFF'
       >
+
         {/* Individual Circle components */}
         <Circle
           key={`circle1`} // Use a unique key for each Circle
@@ -158,7 +161,7 @@ const OverlappingCircles = ({ isActive }) => {
           left="calc(50% - 105px)"
           top="calc(48% + 05px)"
           zIndex={3}
-          imageUrl={B1}
+          imageUrl={B4}
           isActive={isActive}
         />
         <Circle
@@ -180,7 +183,7 @@ const OverlappingCircles = ({ isActive }) => {
           left="calc(50% + 70px)"
           top="calc(50% + 55px)"
           zIndex={3}
-          imageUrl={B1}
+          imageUrl={B5}
           isActive={isActive}
         />
       </Flex>
