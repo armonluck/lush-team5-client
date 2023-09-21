@@ -3,7 +3,7 @@ import { Flex, Box, VStack } from '@chakra-ui/react';
 import B6 from '../assets/bathbombs/Bathbomb_6-transformed.png'; 
 import B7 from '../assets/bathbombs/Bathbomb_7-transformed.png'; 
 import B8 from '../assets/bathbombs/Bathbomb_8-transformed.png'; 
-import ProductCard from './ProductCard';
+import ProductCard from './RecommendedProductCard';
 
 //styles defined with !important toveride html stlye
 const textStyles = {
