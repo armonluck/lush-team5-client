@@ -1,11 +1,16 @@
 import { Flex, Box, Input, FormControl } from "@chakra-ui/react";
-import { ReactComponent as HomeIcon } from "../../assets/icons/home-svgrepo-com.svg";
-import { ReactComponent as SearchIcon } from "../../assets/icons/search-alt-svgrepo-com.svg";
+// import { ReactComponent as HomeIcon } from "../../assets/icons/home-svgrepo-com.svg";
 import { ReactComponent as CameraIcon } from "../../assets/icons/camera-svgrepo-com.svg";
-import { ReactComponent as CartIcon } from "../../assets/icons/shopping-cart-01-svgrepo-com.svg";
 import { ReactComponent as AccountIcon } from "../../assets/icons/account-svgrepo-com.svg";
+// import { ReactComponent as SearchIcon } from "../../assets/icons/search-alt-svgrepo-com.svg";
+// import { ReactComponent as CartIcon } from "../../assets/icons/shopping-cart-01-svgrepo-com.svg";
 import {Link, useNavigate} from 'react-router-dom'
 import { useState, useEffect, useRef } from "react";
+// import CameraIcon from "../Icons/CameraIcon";
+import SearchIcon from "../Icons/SearchIcon";
+import CartIcon from "../Icons/CartIcon";
+import HomeIcon from "../Icons/HomeIcon";
+
 
 function NavBar({isLoggedIn, cart}){
     const [searchPopup, setSearchPopup] = useState(false)
@@ -95,11 +100,11 @@ const handleClickOutside = (event) => {
                     <Flex flexDirection='row' justifyContent="space-between" alignItems='center'>
                         <Box padding='1rem'>
                             <Link to={isLoggedIn?"/landing":'/login'} onClick={()=>setSelectIcon('home')}>
-                                <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'white'}/>
+                                <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'none'}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
-                            <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":'none'}/>
+                            <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":"white"} sx={setStroke}/>
                         </Box>
                         <Box padding='1rem'>
                             <Link to={isLoggedIn?"/about-product":'/login'} onClick={()=>setSelectIcon('camera')}>
@@ -108,7 +113,7 @@ const handleClickOutside = (event) => {
                         </Box>
                         <Box padding='1rem'>
                             <Link to={isLoggedIn?'/CheckoutProduct':'/login'} onClick={()=>setSelectIcon('cart')}>
-                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} sx={setStroke}/>
+                                <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'none'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'white'} />
                             </Link>
                         </Box>
                         <Box padding='1rem'>
