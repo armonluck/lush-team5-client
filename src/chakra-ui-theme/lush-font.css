@@ -6,9 +6,9 @@
   }
   
   /* apply the font to the entire project */
-  html * {
+  /* html * {
     font-family: 'LushHandwritten-Bold' , sans-serif !important;
-  }
+  } */
   
   .CheckoutCartSummary {
     font-family: Helvetica !important;

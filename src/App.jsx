@@ -14,6 +14,7 @@ import NavBar from './components/NavBar/NavBar'
 import CircleSlider from './components/CircleSlider';
 import CheckoutProductCard from './components/CheckoutProductCard';
 import RecommendedProducts from './components/RecommendedProducts';
+import HomePage from './pages/HomePage';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import './chakra-ui-theme/lush-font.css';
 import './styles/_globals.scss';
@@ -33,6 +34,7 @@ function App() {
             (<Routes>
               {/* <Route path='/' element='' /> */}
               <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
+              <Route path='/home' element={<HomePage />} />
               <Route path='/queue' element={<QueuePage />} />
               <Route path='/about-product' element={<AboutProduct />} />
               <Route path='/landing' element={<LandingHeader />} />

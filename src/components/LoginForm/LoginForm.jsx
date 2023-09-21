@@ -40,7 +40,7 @@ const LoginForm = ({setLoggedIn}) => {
       const {username, password} = formRef.current;
       console.log(username.value, password.value)
       setLoggedIn(true)
-      navigate('/landing')
+      navigate('/home')
   }
   
   return (
