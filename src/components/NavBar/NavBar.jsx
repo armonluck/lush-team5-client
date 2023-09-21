@@ -10,6 +10,7 @@ import { useState, useEffect, useRef } from "react";
 function NavBar({isLoggedIn, cart}){
     const [searchPopup, setSearchPopup] = useState(false)
     const [searchInput, setSearchInput] = useState('')
+    const [searchVisible, setSearchVisible] = useState(false);
     const [selectedIcon, setSelectIcon] = useState('')
     const searchIconRef = useRef(null);
     const navigate = useNavigate();
@@ -35,14 +36,18 @@ function NavBar({isLoggedIn, cart}){
     }
 
     const handleSubmit = (e)=>{
-        navigate('/search')
+        navigate('/about-product')
         setSearchPopup(false)
     }
 
   // Event listener for detecting clicks outside the search icon
   const handleClickOutside = (event) => {
-    if (searchIconRef.current && !searchIconRef.current.contains(event.target)) {
-      setSearchPopup(false);
+    if (
+      searchVisible && // Check if the search component is visible
+      !searchIconRef.current.contains(event.target) && // Exclude clicks on the search icon
+      event.target.tagName.toLowerCase() !== 'input' // Exclude clicks on input elements
+    ) {
+      setSearchVisible(false);
     }
   };
   
@@ -77,7 +82,7 @@ function NavBar({isLoggedIn, cart}){
                                     handleSubmit(e);
         }
                             }}
-                            bg= 'white' type="text" name='search' placeholder="Search..."  width="100%" border='none'  _focusVisible='none'/>
+                            bg= 'white' type="text" name='search' placeholder="Search..."  width="100%" border='none' _focusVisible='none'/>
 
                     </Box>
                 </Flex>
@@ -88,7 +93,7 @@ function NavBar({isLoggedIn, cart}){
                 <Box paddingBottom='0rem' width='100vw' padding='0.5rem'>
                     <Flex flexDirection='row' justifyContent="space-between" alignItems='center'>
                         <Box padding='1rem'>
-                            <Link to="/" onClick={()=>setSelectIcon('home')}>
+                            <Link to="/landing" onClick={()=>setSelectIcon('home')}>
                                 <HomeIcon height='3vh' width='auto' fill={selectedIcon==='home'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>
@@ -96,12 +101,12 @@ function NavBar({isLoggedIn, cart}){
                             <SearchIcon ref={searchIconRef} height='3vh' width='auto' onClick={popup} stroke={selectedIcon==='search'?"rgb(180, 157, 253)":'none'}/>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to="/" onClick={()=>setSelectIcon('camera')}>
+                            <Link to="/about-product" onClick={()=>setSelectIcon('camera')}>
                                 <CameraIcon height='3vh' width='auto'  fill={selectedIcon==='camera'?"rgb(180, 157, 253)":'white'} sx={setStroke}/>
                             </Link>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to='/cart' onClick={()=>setSelectIcon('cart')}>
+                            <Link to='/CheckoutProduct' onClick={()=>setSelectIcon('cart')}>
                                 <CartIcon height='3vh' width='auto'  fill={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} stroke={selectedIcon==='cart'?"rgb(180, 157, 253)":'black'} sx={setStroke}/>
                             </Link>
                         </Box>

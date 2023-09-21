@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useAnimation  } from "framer-motion";
 
 
-const LoginForm = ({}) => {
+const LoginForm = ({setLoggedIn}) => {
   const navigate = useNavigate();
   // const [headingVisible, setHeadingVisible] = useState(false);
   const [formVisible, setFormVisible] = useState(false);
@@ -31,25 +31,16 @@ const LoginForm = ({}) => {
       // Use another timeout to make the form visible after 1 second
       setTimeout(() => {
         setFormVisible(true);
-      }, 5000);
+      }, 8000);
     }, []);
     
 
   const handleSubmit = (e)=>{
      e.preventDefault();
-     const {username, password} = formRef.current;
+      const {username, password} = formRef.current;
       console.log(username.value, password.value)
-    //  axios.post(URL,
-    //   {username:username.value, 
-    //     password:password.value})
-    //     .then((response)=>{
-    //       if(response.data.success){
-    //         navigate('../home')
-    //       }
-          
-    //     })
-    //     .catch((err)=>console.log(err))
-        navigate('../home')
+      setLoggedIn(true)
+      navigate('/landing')
   }
   
   return (
@@ -59,7 +50,7 @@ const LoginForm = ({}) => {
                        <motion.div
                        initial={{ opacity: 0, y: -50 }} // Initial state (hidden)
                        animate={{ opacity: 1, y: -200 }} // Visible state
-                       transition={{ duration: 6, delay: 1 }} // Transition duration with delay
+                       transition={{ duration: 5, delay: 1 }} // Transition duration with delay
                    >
                 <Heading as="h1" fontSize="4rem" fontFamily='Lush Handwritten Compressed' color="white">
                   LUSH
@@ -74,13 +65,13 @@ const LoginForm = ({}) => {
           padding='0'
       
         >
-        <form onSubmit={handleSubmit} ref={formRef}>
+        <form onSubmit={(e)=>{handleSubmit(e)}} ref={formRef}>
           <Stack spacing="1rem" width='90vw'>
             <FormControl id="username">
-              <Input bg= 'white' type="text" name='username' placeholder="username"/>
+              <Input bg= 'white' type="text" name='username' placeholder="username" fontFamily='courier' autoComplete="username"/>
             </FormControl>
             <FormControl id="password">
-              <Input bg= 'white' type="password" name='password' placeholder="password" />
+              <Input bg= 'white' type="password" name='password' placeholder="password" autoComplete="current-password"/>
             </FormControl>
             <Link style={{ color: 'white' }} to='/'>Forgot Password?</Link>
           </Stack>

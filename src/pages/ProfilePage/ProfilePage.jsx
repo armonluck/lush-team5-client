@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Flex, Box, VStack } from '@chakra-ui/react';
 import BestSellers from '../../components/BestSellers/BestSellers';
