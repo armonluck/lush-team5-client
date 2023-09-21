@@ -150,7 +150,7 @@ function CheckoutProductCard({
 const App = () => {
   // State to hold the list of products
   const [products, setProducts] = useState([
-    { id: 1, quantity: 1, price: 19, weight: '180g', image: B1, productname: 'Lord Of Misrule', productsubtitle: 'Bath Bomb' },
+    { id: 1, quantity: 1, price: 9.50, weight: '180g', image: B1, productname: 'Lord Of Misrule', productsubtitle: 'Bath Bomb' },
     { id: 2, quantity: 1, price: 33, weight: '240g', image: B5, productname: 'Charity Pot', productsubtitle: 'Body Lotion' },
     { id: 3, quantity: 1, price: 29, weight: '210g', image: B10, productname: 'Sleepy', productsubtitle: 'Body Lotion' },
     { id: 4, quantity: 1, price: 15.5, weight: '180g', image: B4, productname: 'Brightside', productsubtitle: 'Bathbomb' },
