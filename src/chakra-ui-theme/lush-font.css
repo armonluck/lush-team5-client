@@ -1,99 +1,133 @@
 /* custom-font.css */
 @font-face {
-    font-family: 'LushHandwritten-Bold';
-    src: url('./LushHandwritten-Bold/LushHandwritten-Bold.otf') format('opentype');
-    /*define more font properties like font-weight, font-style, etc. */
+  font-family: 'LushHandwritten-Bold';
+  src: url('./LushHandwritten-Bold/LushHandwritten-Bold.otf') format('opentype');
+  /*define more font properties like font-weight, font-style, etc. */
+}
+
+/* apply the font to the entire project */
+/* html * {
+  font-family: 'LushHandwritten-Bold' , sans-serif !important;
+} */
+
+.circleSubTitle {
+font-family: 'Helvetica Neue';
+font-size: 12px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: 0.04em;
+text-align: left;
+width: 50%;
+word-wrap: normal;
+}
+.CircleTitle {
+  font-family: 'LushHandwritten-Bold';
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+ }
+
+.H5LushSpecific {
+  font-family: 'LushHandwritten-Bold';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 1rem;
+  color:#B49DFD;
+  white-space: nowrap;
+};
+
+.CheckoutCartSummary {
+  font-family: Helvetica !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 28px !important;
+  letter-spacing: 0.05px !important;
+  text-align: left !important;
+}
+
+
+  .product-cost {
+      font-family: "Helvetica Neue" !important;
+      font-weight: bold;
+      font-size: 15px !important;
+      line-height: 45px !important;
+      letter-spacing: 0.04em !important;
+      color: #000000;
+      ;
+  }
+
+  .product-weight {
+      font-family: "Helvetica Neue" !important;
+      font-weight: bold;
+      font-size: 15px !important;
+      line-height: 45px !important;
+      letter-spacing: 0.04em !important;
+      color: #000000;
+      ;
   }
   
-  /* apply the font to the entire project */
-  /* html * {
-    font-family: 'LushHandwritten-Bold' , sans-serif !important;
-  } */
-  
-  .CheckoutCartSummary {
-    font-family: Helvetica !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    line-height: 28px !important;
-    letter-spacing: 0.05px !important;
-    text-align: left !important;
+  .select-quantity-number {
+      font-family: Helvetica !important;
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      line-height: 14px !important;
+      letter-spacing: 0.06em !important;
+      text-align: left !important;
   }
-
-
-    .product-cost {
-        font-family: "Helvetica Neue" !important;
-        font-weight: bold;
-        font-size: 15px !important;
-        line-height: 45px !important;
-        letter-spacing: 0.04em !important;
-        color: #000000;
-        ;
-    }
-
-    .product-weight {
-        font-family: "Helvetica Neue" !important;
-        font-weight: bold;
-        font-size: 15px !important;
-        line-height: 45px !important;
-        letter-spacing: 0.04em !important;
-        color: #000000;
-        ;
-    }
-    
-    .select-quantity-number {
-        font-family: Helvetica !important;
-        font-size: 12px !important;
-        font-weight: 400 !important;
-        line-height: 14px !important;
-        letter-spacing: 0.06em !important;
-        text-align: left !important;
-    }
 
 /* accordionStyles.css */
 
 /* Styles for titles */
 .titleStyles {
-    width: 100%;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 43px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin: 8px 0;
-    margin-left: 16px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  /* Styles for accordion container */
-  .accordionContainerStyles {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.3s ease-in-out;
-  }
-  
-  /* Styles for accordion titles */
-  .accordionTitleStyles {
-    width: 100%;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 17px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-left: 16px;
-    cursor: pointer;
-    font-family: Helvetica;
-    color: black;
-  }
-  
-.listItemStyles {
-    font-family: 'Helvetica' !important;
-    font-weight: 400 !important;
-    line-height: 14px !important;
-    letter-spacing: 0.06em !important;
-    text-align: left !important;
-    margin-left: 1rem;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 8px 0;
+  margin-left: 16px;
+  cursor: pointer;
+  color: white;
 }
 
+/* Styles for accordion container */
+.accordionContainerStyles {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+/* Styles for accordion titles */
+.accordionTitleStyles {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 16px;
+  cursor: pointer;
+  font-family: Helvetica;
+  color: black;
+}
+
+.listItemStyles {
+  font-family: 'Helvetica' !important;
+  font-weight: 400 !important;
+  line-height: 14px !important;
+  letter-spacing: 0.06em !important;
+  text-align: left !important;
+  margin-left: 1rem;
+}
+
+.containerStyle {
+  border: 'none',
+};

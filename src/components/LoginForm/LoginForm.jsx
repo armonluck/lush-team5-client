@@ -37,7 +37,7 @@ const LoginForm = ({ setLoggedIn }) => {
     // Use another timeout to make the form visible after 1 second
     setTimeout(() => {
       setFormVisible(true);
-    }, 3000);
+    }, 1500);
   }, []);
 
 
@@ -56,7 +56,7 @@ const LoginForm = ({ setLoggedIn }) => {
         <motion.div
           initial={{ opacity: 0, y: -50 }} // Initial state (hidden)
           animate={{ opacity: 1, y: -200 }} // Visible state
-          transition={{ duration: 3, delay: 1 }} // Transition duration with delay
+          transition={{ duration: 1.5, delay: 1 }} // Transition duration with delay
         >
           <Heading as="h1" fontSize="4rem" fontFamily='Lush Handwritten Compressed' color="white" marginTop='68px' marginBottom='-20px'>
             LUSH
@@ -67,7 +67,7 @@ const LoginForm = ({ setLoggedIn }) => {
         <motion.div
           initial={{ opacity: 0 }} // Initial state (hidden)
           animate={{ opacity: 1 }}  // Visible state
-          transition={{ duration: 3 }} // Transition duration
+          transition={{ duration: 1.5 }} // Transition duration
           padding='0'
           bg='#282121'
 

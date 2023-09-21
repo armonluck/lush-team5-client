@@ -1,37 +1,118 @@
 // Importing required modules and components from Chakra UI and local files
 import React, { useState, useRef, useEffect } from 'react';
-import { Box, Flex, Spacer, IconButton } from '@chakra-ui/react';
+import { Box, Flex, Spacer, IconButton, Heading} from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import OverlappingCircles from './OverlappingCircles';
-
-const circleHeading = [
-  {heading1: "Sustainability"}, 
-  {heading2: "Social Change"},
-  {heading3: "Campaigning"}
+import B1 from "../assets/bathbombs/Bathbomb_1-transformed.png";
+import B4 from "../assets/bathbombs/Bathbomb_4-transformed.png";
+import B5 from "../assets/bathbombs/Bathbomb_5-transformed.png";
+export const circleData = [
+  {
+    heading: 'Sustainability',
+    circles: [
+      {
+        size: '200px',
+        Label: '86LB',
+        subLabel: 'Plastic containers recycled in-house',
+        left: 'calc(50% - 80px)',
+        top: 'calc(50% + 10px)',
+        zIndex: 2,
+        imageUrl: B4,
+      },
+      {
+        size: '200px',
+        Label: '12LB',
+        subLabel: 'Paper saved shopping paperless',
+        left: 'calc(50% + 15px)',
+        top: 'calc(50% - 65px)',
+        zIndex: 1,
+        imageUrl: B1,
+      },
+      {
+        size: '200px',
+        Label: '74%',
+        subLabel: 'Reduced emissions',
+        left: 'calc(50% + 40px)',
+        top: 'calc(50% + 30px)',
+        zIndex: 3,
+        imageUrl: B5,
+      },
+    ],
+  },
+  {
+    heading: 'Social Change',
+    circles: [
+      {
+        size: '200px',
+        Label: '54%',
+        subLabel: 'Donated to human rights sector',
+        left: 'calc(50% - 80px)',
+        top: 'calc(50% + 10px)',
+        zIndex: 2,
+        imageUrl: B4,
+      },
+      {
+        size: '200px',
+        Label: '23%',
+        subLabel: 'Animal protection sector',
+        left: 'calc(50% + 15px)',
+        top: 'calc(50% - 65px)',
+        zIndex: 1,
+        imageUrl: B1,
+      },
+      {
+        size: '200px',
+        Label: '5%',
+        subLabel: 'Climate change sector',
+        left: 'calc(50% + 40px)',
+        top: 'calc(50% + 30px)',
+        zIndex: 3,
+        imageUrl: B5,
+      },
+    ],
+  },
+  {
+    heading: 'Campaigning',
+    circles: [
+      {
+        size: '200px',
+        Label: '131.64%',
+        subLabel: 'Donated via Charity Pot purchases',
+        left: 'calc(50% - 80px)',
+        top: 'calc(50% + 10px)',
+        zIndex: 2,
+        imageUrl: B4,
+      },
+      {
+        size: '200px',
+        Label: '100%',
+        subLabel: 'Error 404 is fully funded',
+        left: 'calc(50% + 15px)',
+        top: 'calc(50% - 65px)',
+        zIndex: 1,
+        imageUrl: B1,
+      },
+      {
+        size: '200px',
+        Label: '47%',
+        subLabel: 'Contributed towards!',
+        left: 'calc(50% + 40px)',
+        top: 'calc(50% + 30px)',
+        zIndex: 3,
+        imageUrl: B5,
+      },
+    ],
+  },
 ];
-
 // CircleSlider Component
 // This component represents a slider for displaying overlapping circles.
 const CircleSlider = () => {
   // State to hold the current index of the active circle
   const [currentIndex, setCurrentIndex] = useState(0);
-  
   // Total number of circles in the slider
-  const totalCircles = 4;
-  
+  const totalCircles = 3;
   // Ref to hold the scroll container
   const scrollRef = useRef(null);
-
-  // Function to handle the "Next" action
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalCircles);
-  };
-
-  // Function to handle the "Previous" action
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalCircles) % totalCircles);
-  };
-
   // Function to scroll to the current active circle
   const scrollToCurrentIndex = () => {
     if (scrollRef.current) {
@@ -43,42 +124,26 @@ const CircleSlider = () => {
       container.scrollTop = target.offsetTop - verticalOffset;
     }
   };
-
   // Set initial scroll position to the first circle
   useEffect(() => {
     scrollToCurrentIndex();
   }, []);
-
   return (
-    <Flex direction="column" align="center" h="100vh" overflowX="auto" overflowY="hidden">
-      <Flex ref={scrollRef} direction="row" overflow="auto" w="100%" py={4} ml="2px">
+    <Flex  direction="column" align="center" h="50vh" overflowX="" overflowY="hidden">
+      <Flex ref={scrollRef} direction="row" overflow="auto" overflowY="hidden" w="100%" py={4} mt="20px" ml="2px">
         {/* Render OverlappingCircles components */}
-        {/* isActive prop is used to determine the active circle */}
-        {[...Array(totalCircles)].map((_, index) => (
-          <Box key={index} w="100%" h="100vh" mx={52}>
-            <OverlappingCircles isActive={currentIndex === index} />
+        {circleData.map((group, groupIndex) => (
+          <Box key={`group${groupIndex}`} w="100%" mb="2rem" pb="4rem" h="100vh" pt="25rem" mx={40}>
+            <OverlappingCircles
+              isActive={true}
+              data={group.circles}
+              heading={group.heading}
+            />
           </Box>
         ))}
       </Flex>
-      <Spacer />
-      {/* Navigation Buttons */}
-      <Flex mb={4} spacing={4}>
-        <IconButton
-          aria-label="Scroll Left"
-          icon={<ChevronLeftIcon />}
-          onClick={() => { handlePrev(); scrollToCurrentIndex(); }}
-          marginRight="1rem"
-        />
-        <IconButton
-          aria-label="Scroll Right"
-          icon={<ChevronRightIcon />}
-          onClick={() => { handleNext(); scrollToCurrentIndex(); }}
-          marginLeft="1rem"
-        />
-      </Flex>
     </Flex>
-  );  
+  );
 };
-
 // Export the CircleSlider component
 export default CircleSlider;

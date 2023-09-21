@@ -112,7 +112,7 @@ const handleClickOutside = (event) => {
                             </Link>
                         </Box>
                         <Box padding='1rem'>
-                            <Link to={isLoggedIn?'/profile':'/login'} onClick={()=>setSelectIcon('account')}>
+                            <Link to={isLoggedIn?'/home':'/login'} onClick={()=>setSelectIcon('account')}>
                                 <AccountIcon height='3vh' width='auto'  fill={selectedIcon==='account'?"rgb(180, 157, 253)":'white'}/>
                             </Link>
                         </Box>
