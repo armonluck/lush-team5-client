@@ -15,38 +15,37 @@ import HomePage from './pages/HomePage';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import './chakra-ui-theme/lush-font.css';
 import './styles/_globals.scss';
-import {useState} from 'react'
+import { useState } from 'react'
 
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
-  const [cart,setCart] =useState([]);
+  const [cart, setCart] = useState([]);
 
   return (
     <BrowserRouter>
       <StatusBar />
       <ChakraProvider>
-          {isLoggedIn ? <NavBar isLoggedIn={isLoggedIn} cart={cart}/> : null}
-          {isLoggedIn ?
-            (<Routes>
-              {/* <Route path='/' element='' /> */}
-              <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
-              <Route path='/home' element={<HomePage />} />
-              <Route path='/product' element={<ProductDetails/>} />
-              <Route path='/queue' element={<QueuePage />} />
-              {/* TODO: move Box elsewhere, cannot be placed under routes, else results in an error */}
-              {/* <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw"> */}
-                <Route path="/CircleSlider" element={<CircleSlider />} />
-                <Route path="/CheckoutProduct" element={<CheckoutProductCard />} />
-                <Route path="/RecommendedProducts" element={<RecommendedProducts />} />
-              {/* </Box> */}
-        </Routes>)
-        :    
-        (        
-          <Routes>
+        {isLoggedIn ? <NavBar isLoggedIn={isLoggedIn} cart={cart} /> : null}
+        {isLoggedIn ?
+          (<Routes>
+            {/* <Route path='/' element='' /> */}
+            <Route path='/profile' element={<ProfilePage isLoggedIn={isLoggedIn} />} />
+            <Route path='/home' element={<HomePage />} />
+            <Route path='/product' element={<ProductDetails />} />
+            <Route path='/queue' element={<QueuePage />} />
+            {/* TODO: move Box elsewhere, cannot be placed under routes, else results in an error */}
+            {/* <Box className="App" padding="0 1rem" background="#282121" textAlign="center" width="100vw"> */}
+            <Route path="/CheckoutProduct" element={<CheckoutProductCard />} />
+            <Route path="/RecommendedProducts" element={<RecommendedProducts />} />
+            {/* </Box> */}
+          </Routes>)
+          :
+          (
+            <Routes>
               <Route path='/login' element={<LoginPage setLoggedIn={setLoggedIn} />} />
-        </Routes>)
-          }
+            </Routes>)
+        }
       </ChakraProvider>
     </BrowserRouter>
   );
