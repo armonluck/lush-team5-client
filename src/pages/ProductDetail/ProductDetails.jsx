@@ -28,7 +28,7 @@ function ProductDetails() {
       <Heading as='h2' color='#FFF' fontFamily='LushHandwritten-Bold' fontSize='18px' fontWeight='700' lineHeight='normal' mx='20px' mb='20px'>
         Similar Products
       </Heading>
-      <Box mx='20px' mb="4rem" bg="#F3F2F3" borderRadius="10px">
+      <Box mx='20px' mb="12rem" bg="#F3F2F3" borderRadius="10px">
         <RecommendedProducts2 />
       </Box>
     </Box>
